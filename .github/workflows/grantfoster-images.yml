@@ -22,13 +22,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Use the docker driver so BuildKit runs inside the daemon instead of
-      # pulling moby/buildkit from Docker Hub (avoids flaky registry-1.docker.io
-      # HEAD/manifest failures during setup).
+      # Default docker-container driver: required for cache-from/cache-to type=gha
+      # (the docker driver cannot export GHA cache). Tradeoff: pulls moby/buildkit
+      # from Docker Hub during setup.
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
-        with:
-          driver: docker
 
       - name: Login to Docker Hub
         if: startsWith(github.ref, 'refs/tags/')
