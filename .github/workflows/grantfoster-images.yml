@@ -22,8 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Use the docker driver so BuildKit runs inside the daemon instead of
+      # pulling moby/buildkit from Docker Hub (avoids flaky registry-1.docker.io
+      # HEAD/manifest failures during setup).
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
+        with:
+          driver: docker
 
       - name: Login to Docker Hub
         if: startsWith(github.ref, 'refs/tags/')
