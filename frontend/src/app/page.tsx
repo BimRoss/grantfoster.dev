@@ -1,46 +1,35 @@
 import { ProjectCard } from "@/components/ProjectCard";
+import { ProjectsFallback } from "@/components/ProjectsFallback";
 import { SocialLinks } from "@/components/SocialLinks";
 import { projects } from "@/data/projects";
 
 export default function Home() {
   return (
-    <div className="page-grain relative z-0 min-h-dvh">
-      <div className="relative z-10 mx-auto flex min-h-dvh max-w-6xl flex-col px-5 pb-16 pt-14 md:px-10 md:pb-20 md:pt-20">
-        <header className="mb-12 md:mb-16">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.35em] text-[var(--muted)]">
-            grantfoster.dev
-          </p>
-          <h1 className="font-[family-name:var(--font-display)] text-4xl font-medium tracking-tight text-[var(--foreground)] md:text-5xl">
-            Grant Foster
-          </h1>
-          <p className="mt-4 max-w-xl text-lg leading-relaxed text-[var(--muted)] md:text-xl">
-            Building on Bittensor, trading infra, and side projects — reach me anywhere below.
-          </p>
-        </header>
+    <div className="relative z-0 flex h-dvh max-h-dvh flex-col overflow-hidden">
+      <h1 className="sr-only">Grant Foster</h1>
 
-        <section aria-labelledby="social-heading" className="mb-14 md:mb-20">
-          <h2 id="social-heading" className="sr-only">
-            Social & contact
-          </h2>
-          <div className="rounded-2xl border border-[var(--border)] bg-[var(--panel)]/80 p-5 backdrop-blur-sm md:p-6">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.25em] text-[var(--muted)]">
-              Connect
-            </p>
-            <SocialLinks />
-          </div>
-        </section>
+      <div className="relative z-10 flex min-h-0 w-full flex-1 flex-col overflow-hidden">
+        <section
+          aria-label="Projects"
+          className="flex min-h-0 flex-1 flex-col overflow-hidden"
+        >
+          {/* When JS is off, the browser applies this block and hides the grid. When JS is on, noscript is not rendered — no duplicate layout, no hydration fight. */}
+          <noscript>
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `.projects-enhanced{display:none!important}`,
+              }}
+            />
+            <ProjectsFallback />
+          </noscript>
 
-        <section aria-labelledby="work-heading" className="flex min-h-0 flex-1 flex-col">
-          <h2
-            id="work-heading"
-            className="mb-6 font-[family-name:var(--font-display)] text-2xl font-medium text-[var(--foreground)] md:mb-8 md:text-3xl"
-          >
-            Work & projects
-          </h2>
-          <div className="min-h-0 flex-1 overflow-y-auto pr-1 md:max-h-[calc(100dvh-24rem)] md:pr-2">
-            <ul className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-10 md:gap-y-12 lg:grid-cols-3">
+          <div className="projects-enhanced flex h-full min-h-0 flex-1 flex-col overflow-hidden">
+            <ul className="grid h-full min-h-0 w-full grid-cols-2 grid-rows-[repeat(5,minmax(0,1fr))] gap-2 bg-[var(--background)] p-2 lg:grid-cols-5 lg:grid-rows-[repeat(2,minmax(0,1fr))] lg:gap-3 lg:p-3">
               {projects.map((project) => (
-                <li key={project.id}>
+                <li
+                  key={project.id}
+                  className="flex h-full min-h-0 flex-col overflow-hidden"
+                >
                   <ProjectCard project={project} />
                 </li>
               ))}
@@ -48,6 +37,13 @@ export default function Home() {
           </div>
         </section>
       </div>
+
+      <footer className="shrink-0 border-t border-[var(--border)] bg-[var(--background)] px-0 py-0 md:px-8 md:py-6 lg:px-12">
+        <h2 id="social-heading" className="sr-only">
+          Social & contact
+        </h2>
+        <SocialLinks />
+      </footer>
     </div>
   );
 }

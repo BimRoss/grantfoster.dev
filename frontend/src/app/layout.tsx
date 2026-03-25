@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import { Fraunces, Figtree } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const display = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display",
-});
-
-const sansBody = Figtree({
+const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans-body",
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
 
 export const metadata: Metadata = {
   title: "Grant Foster",
@@ -31,9 +31,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sansBody.variable} h-full scroll-smooth antialiased`}
+      className={`${sans.variable} h-full scroll-smooth antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full font-sans">{children}</body>
     </html>
   );
 }
