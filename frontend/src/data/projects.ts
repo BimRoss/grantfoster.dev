@@ -12,14 +12,14 @@ export const projects: Project[] = [
     id: "subnet-signal",
     title: "Subnet Signal",
     blurb: "Bittensor subnet intelligence and tooling.",
-    image: "/mixt.jpeg",
+    image: "/subnet-signal.jpeg",
     href: "https://subnetsignal.com",
   },
   {
     id: "gotrader",
     title: "GoTrader",
     blurb: "Trading stack and automation.",
-    image: "/gas-pump-games.jpeg",
+    image: "/gotrader.jpeg",
     href: "https://gotrader.gopher-ai.com",
   },
   {
