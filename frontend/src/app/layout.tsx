@@ -138,6 +138,12 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlex.variable} h-full overflow-hidden bg-white text-zinc-950`}
     >
       <body className="relative z-0 h-dvh overflow-hidden bg-white text-zinc-950 antialiased">
+        <a
+          href="#main-content"
+          className="sr-only absolute left-4 top-4 z-[10001] bg-white px-4 py-2 text-sm text-zinc-950 ring-1 ring-zinc-300 focus:not-sr-only focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-zinc-700"
+        >
+          Skip to main content
+        </a>
         <Script
           id="ld-json-grantfoster"
           type="application/ld+json"

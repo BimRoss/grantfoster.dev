@@ -22,10 +22,6 @@ html {
   background-color: #ffffff;
   color: #09090b;
   color-scheme: light;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
 }
 
 body {
@@ -36,9 +32,6 @@ body {
   min-height: 100%;
   font-family: var(--font-ibm-plex), system-ui, sans-serif;
   color-scheme: light;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 * {
@@ -172,7 +165,7 @@ body::after {
 }
 
 ::selection {
-  background: transparent;
+  background: rgba(17, 24, 39, 0.18);
   color: inherit;
 }
 

@@ -7,7 +7,7 @@ import { socials } from "@/data/socials";
 import { EmailSocialLink } from "./EmailSocialLink";
 import { useSiteToast } from "./ToastProvider";
 
-const CALL_TOAST_MESSAGE = "email us instead";
+const CALL_TOAST_MESSAGE = "email me instead";
 
 export function StickySocialBar() {
   const { showToast } = useSiteToast();
