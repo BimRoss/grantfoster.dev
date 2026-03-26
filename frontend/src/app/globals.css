@@ -281,13 +281,3 @@ body::after {
     letter-spacing: 0.12em;
   }
 }
-
-[data-sonner-toaster].bim-sonner [data-close-button].bim-sonner-close {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  color: #111111 !important;
-}
-
-[data-sonner-toaster].bim-sonner [data-close-button].bim-sonner-close:hover {
-  background: rgba(0, 0, 0, 0.1) !important;
-}

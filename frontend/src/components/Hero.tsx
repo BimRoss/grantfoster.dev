@@ -60,16 +60,13 @@ export function Hero() {
 
             <div className="pointer-events-auto flex w-full shrink-0 flex-col gap-4 sm:max-w-md md:w-auto md:items-end md:gap-5">
               {productCTAs.map((cta) => {
-                const desktopOrderClassName =
-                  cta.label === "My Company" ? " md:order-last" : "";
-
                 if (cta.kind === "toast") {
                   return (
                     <button
                       key={cta.label}
                       type="button"
                       onClick={() => showToast(cta.message)}
-                      className={ctaClassName + desktopOrderClassName}
+                      className={ctaClassName}
                     >
                       {cta.label}
                     </button>
@@ -81,7 +78,7 @@ export function Hero() {
                     href={cta.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={ctaClassName + desktopOrderClassName}
+                    className={ctaClassName}
                   >
                     {cta.label}
                   </a>

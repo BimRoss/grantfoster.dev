@@ -24,7 +24,6 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
         expand
         visibleToasts={5}
         gap={12}
-        closeButton
         richColors={false}
         toastOptions={{
           duration: DEFAULT_DURATION_MS,
@@ -32,7 +31,6 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
             toast: "bim-sonner-toast",
             title: "bim-sonner-toast-text",
             description: "bim-sonner-toast-text",
-            closeButton: "bim-sonner-close",
           },
         }}
       />
