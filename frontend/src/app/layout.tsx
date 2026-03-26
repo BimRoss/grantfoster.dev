@@ -2,8 +2,16 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Syne } from "next/font/google";
 import Script from "next/script";
 
+import { JsonLd } from "@/components/JsonLd";
 import { ToastProvider } from "@/components/ToastProvider";
-import { socials } from "@/data/socials";
+import {
+  buildRootJsonLd,
+  OG_IMAGE_PATH,
+  siteDescription,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/data/site";
 
 import "./globals.css";
 
@@ -21,64 +29,21 @@ const ibmPlex = IBM_Plex_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://grantfoster.dev";
-const siteName = "Grant Foster";
-const siteTitle = "Grant Foster | AI Staff Engineer";
-const ogImagePath = "/opengraph-image";
-const siteDescription =
-  "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.";
-
-const sameAs = socials.flatMap((s) =>
-  "href" in s &&
-  typeof s.href === "string" &&
-  /^https?:\/\//.test(s.href)
-    ? [s.href]
-    : [],
-);
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: siteUrl,
-      name: siteName,
-      description: siteDescription,
-      publisher: { "@id": `${siteUrl}/#person` },
-      inLanguage: "en-US",
-    },
-    {
-      "@type": "Person",
-      "@id": `${siteUrl}/#person`,
-      name: siteName,
-      url: siteUrl,
-      description: siteDescription,
-      email: "mailto:grantdfoster@gmail.com",
-      jobTitle: "AI Staff Engineer",
-      sameAs,
-      worksFor: {
-        "@type": "Organization",
-        name: "BimRoss",
-        url: "https://bimross.com",
-      },
-    },
-  ],
-};
+const rootJsonLd = buildRootJsonLd();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
   },
-  applicationName: siteName,
+  applicationName: SITE_NAME,
   category: "technology",
   icons: {
     icon: [{ url: "/icon", type: "image/png" }],
     apple: [{ url: "/icon", type: "image/png" }],
   },
   title: {
-    default: siteTitle,
+    default: SITE_TITLE,
     template: "%s · Grant Foster",
   },
   description: siteDescription,
@@ -92,15 +57,15 @@ export const metadata: Metadata = {
     "Invoice Pilot",
   ],
   openGraph: {
-    title: siteTitle,
+    title: SITE_TITLE,
     description: siteDescription,
-    url: siteUrl,
-    siteName,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: ogImagePath,
+        url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
         alt: "Grant Foster - AI staff engineer, Bittensor miner, and operator",
@@ -109,9 +74,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: siteTitle,
+    title: SITE_TITLE,
     description: siteDescription,
-    images: [ogImagePath],
+    images: [OG_IMAGE_PATH],
     creator: "@geeeeeeemoney",
   },
   robots: {
@@ -144,15 +109,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Script
-          id="ld-json-grantfoster"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData),
-          }}
-        />
+        <JsonLd data={rootJsonLd} />
         <ToastProvider>
-          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-hidden">
+          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-x-hidden overflow-y-auto">
             {children}
           </div>
         </ToastProvider>

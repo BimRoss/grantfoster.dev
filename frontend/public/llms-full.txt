@@ -12,6 +12,8 @@ Grant Foster is an AI staff engineer focused on applied AI systems, distributed 
 - Main site: https://grantfoster.dev
 - About: https://grantfoster.dev/about
 - Projects: https://grantfoster.dev/projects
+- Profile JSON: https://grantfoster.dev/profile.json
+- Projects JSON: https://grantfoster.dev/projects.json
 - Company: https://bimross.com
 - Subnet Signal: https://subnetsignal.com
 - GoTrader: https://gotrader.gopher-ai.com

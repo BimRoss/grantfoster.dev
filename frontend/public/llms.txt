@@ -8,6 +8,10 @@
 - https://grantfoster.dev/about
 - https://grantfoster.dev/projects
 
+## Machine-readable JSON (for agents and tools)
+- https://grantfoster.dev/profile.json — person profile
+- https://grantfoster.dev/projects.json — project directory
+
 ## Identity
 - Name: Grant Foster
 - Role: AI Staff Engineer
