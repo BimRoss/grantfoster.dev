@@ -20,7 +20,7 @@ export function StickySocialBar() {
 
   return (
     <div
-      className="relative z-[60] w-full shrink-0 border-t border-white/80 bg-gradient-to-b from-white/58 via-white/42 to-white/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.98),0_-10px_36px_rgba(0,0,0,0.06)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:from-white/52 supports-[backdrop-filter]:via-white/36 supports-[backdrop-filter]:to-white/22"
+      className="relative z-[60] w-full shrink-0 border-t border-black/10 bg-gradient-to-b from-white/[0.22] via-white/[0.14] to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.62),0_-8px_24px_rgba(0,0,0,0.045)] backdrop-blur-md backdrop-saturate-110 supports-[backdrop-filter]:from-white/[0.18] supports-[backdrop-filter]:via-white/[0.08] supports-[backdrop-filter]:to-transparent"
     >
       <nav aria-labelledby="social-heading" className="w-full">
         <h2 id="social-heading" className="sr-only">
@@ -32,10 +32,19 @@ export function StickySocialBar() {
         >
         {socials.map(({ label, icon: Icon, ...rest }) => {
           const className =
-            "group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-white/65 bg-gradient-to-b from-white/72 via-white/52 to-white/40 shadow-[0_0_0_1px_rgba(255,255,255,0.45),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl backdrop-saturate-150 transition-[background-color,transform,box-shadow,filter] last:border-r-0 hover:from-white/88 hover:via-white/72 hover:to-white/58 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.65),inset_0_1px_0_rgba(255,255,255,1)] active:scale-[0.98] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60";
-          const iconSize =
-            label === "SoundCloud" ? "size-7 shrink-0 text-black md:size-[1.75rem]" : "size-6 shrink-0 text-black md:size-7";
-          const icon = <Icon className={iconSize} aria-hidden />;
+            "social-cell group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-black/10 transition-[transform,border-color,box-shadow,background] duration-300 ease-in-out last:border-r-0 active:scale-[0.98] hover:scale-[1.04] focus-visible:scale-[1.04] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60";
+          const icon = (
+            <span className="social-icon-shell" aria-hidden>
+              <Icon
+                className={
+                  label === "SoundCloud"
+                    ? "social-icon social-icon--soundcloud shrink-0"
+                    : "social-icon shrink-0"
+                }
+                aria-hidden
+              />
+            </span>
+          );
 
           if ("action" in rest && rest.action === "call") {
             return (

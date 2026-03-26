@@ -12,14 +12,15 @@ import { useSiteToast } from "./ToastProvider";
 
 /** Light canvas: frosted white glass (blur + gradient + rim), all breakpoints — not flat white on md */
 const ctaClassName = [
-  "hero-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center px-10 py-4",
-  "border border-white/80 bg-gradient-to-br from-white/90 via-white/76 to-white/62",
-  "shadow-[0_0_0_1px_rgba(255,255,255,0.55),0_1px_0_rgba(255,255,255,0.92),0_10px_32px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.98)]",
-  "backdrop-blur-xl backdrop-saturate-150",
+  "hero-cta product-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center px-10 py-4",
+  "border border-white/50 bg-gradient-to-br from-white/40 via-white/28 to-white/18",
+  "shadow-[0_0_0_1px_rgba(255,255,255,0.28),0_1px_0_rgba(255,255,255,0.48),0_10px_24px_rgba(0,0,0,0.045),inset_0_1px_0_rgba(255,255,255,0.68)]",
+  "backdrop-blur-sm backdrop-saturate-115",
   "font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900",
-  "transition-[border-color,box-shadow,background-color,filter]",
-  "hover:border-white hover:from-white/96 hover:via-white/88 hover:to-white/78",
-  "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_1px_0_rgba(255,255,255,1),0_14px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,1)]",
+  "transform-gpu scale-100 transition-[transform,border-color,box-shadow,background-color,backdrop-filter,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
+  "hover:border-white/65 hover:from-white/50 hover:via-white/36 hover:to-white/24",
+  "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.4),0_1px_0_rgba(255,255,255,0.62),0_16px_34px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.78)]",
+  "hover:scale-[1.05] focus-visible:scale-[1.05]",
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40",
   "md:min-w-[14rem] md:px-12 md:py-5",
 ].join(" ");
@@ -34,7 +35,7 @@ export function Hero() {
         className="relative flex min-h-0 flex-1 flex-col justify-start bg-white px-5 pt-6 pb-4 md:justify-center md:px-10 md:py-8 md:pb-8"
         aria-labelledby="hero-heading"
       >
-        <div className="absolute inset-0 z-0">
+        <div className="fixed inset-0 z-0">
           <NetworkBackdrop ref={networkRef} />
         </div>
         <div
@@ -85,13 +86,14 @@ export function Hero() {
               <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
                 Bittensor miner & operator, I develop AI trading systems and self-improving UI.{" "}
                 <br className="hidden md:block" aria-hidden />
-                Agentic backends, distributed infrastructure, and the experiments in between.
+                Specialized in agentic-powered backends, distributed infrastructure, and the
+                experiments in between.
               </p>
             </div>
 
             <nav
               aria-label="Products and links"
-              className="products-scroll pointer-events-auto flex min-h-0 w-full flex-1 flex-col gap-4 overflow-y-auto overscroll-y-contain pb-1 sm:max-w-md md:h-auto md:w-auto md:flex-none md:shrink-0 md:items-end md:overflow-visible md:gap-5 md:pb-0"
+              className="products-scroll products-reveal pointer-events-auto flex min-h-0 w-full flex-1 flex-col gap-4 overflow-y-auto overscroll-y-contain pb-1 sm:max-w-md md:h-auto md:w-auto md:flex-none md:shrink-0 md:items-end md:overflow-visible md:gap-5 md:pb-0"
             >
               {productCTAs.map((cta) => {
                 if (cta.kind === "toast") {

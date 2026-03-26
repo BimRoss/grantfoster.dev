@@ -6,7 +6,7 @@ export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 export const siteDescription =
-  "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.";
+  "Bittensor miner & operator, I develop AI trading systems and self-improving UI. Specialized in agentic-powered backends, distributed infrastructure, and the experiments in between.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
@@ -163,8 +163,7 @@ export function buildAboutPageJsonLd() {
         "@id": `${url}#webpage`,
         url,
         name: "About Grant Foster",
-        description:
-          "About Grant Foster: AI staff engineer, Bittensor operator, and builder of distributed systems and product experiments.",
+        description: `About Grant Foster: ${siteDescription}`,
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#person` },
         inLanguage: "en-US",

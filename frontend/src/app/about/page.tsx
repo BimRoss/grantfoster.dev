@@ -6,7 +6,7 @@ import { buildAboutPageJsonLd } from "@/data/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Grant Foster: AI staff engineer, Bittensor operator, and builder of distributed systems and product experiments.",
+    "Bittensor miner & operator, I develop AI trading systems and self-improving UI. Specialized in agentic-powered backends, distributed infrastructure, and the experiments in between.",
   alternates: {
     canonical: "/about",
   },
@@ -20,11 +20,11 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl space-y-6">
           <h1 className="font-display text-4xl tracking-tight md:text-5xl">About Grant Foster</h1>
           <p className="text-base leading-relaxed text-zinc-800 md:text-lg">
-            I build and operate AI-native systems across product, infrastructure, and automation.
+            Bittensor miner & operator, I develop AI trading systems and self-improving UI.
           </p>
           <p className="text-base leading-relaxed text-zinc-800 md:text-lg">
-            Current focus areas include Bittensor operations, agentic backends, and practical
-            software that compounds through iteration.
+            Specialized in agentic-powered backends, distributed infrastructure, and the
+            experiments in between.
           </p>
           <ul className="list-disc space-y-2 pl-6 text-zinc-800">
             <li>Name: Grant Foster</li>

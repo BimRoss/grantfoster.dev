@@ -50,9 +50,10 @@ body::after {
 }
 
 .network-backdrop {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  min-height: 100%;
+  min-height: 100dvh;
+  height: 100dvh;
   width: 100%;
   overflow: hidden;
   background:
@@ -90,6 +91,12 @@ body::after {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .network-bg {
+    animation: networkDrift 36s cubic-bezier(0.45, 0, 0.55, 1) infinite alternate;
+    transform-origin: 50% 50%;
+    will-change: transform;
+  }
+
   .network-edge-pulse {
     animation: edgePulse 4.5s linear infinite;
   }
@@ -106,6 +113,11 @@ body::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .network-bg {
+    animation: none;
+    transform: none;
+  }
+
   .network-edge-pulse {
     animation: none;
     opacity: 0;
@@ -113,6 +125,18 @@ body::after {
 
   .network-packets {
     display: none;
+  }
+}
+
+@keyframes networkDrift {
+  0% {
+    transform: translate3d(-10px, -8px, 0) scale(1.012);
+  }
+  45% {
+    transform: translate3d(7px, 5px, 0) scale(1.006);
+  }
+  100% {
+    transform: translate3d(12px, -6px, 0) scale(1.014);
   }
 }
 
@@ -305,5 +329,125 @@ body::after {
   [data-sonner-toaster].bim-sonner [data-sonner-toast][data-styled="true"] [data-description] {
     font-size: 1rem;
     letter-spacing: 0.12em;
+  }
+}
+
+/* Footer social (light theme): each tile is the glass pane (no inner secondary white shell) */
+.social-cell {
+  isolation: isolate;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.12)
+  );
+  -webkit-backdrop-filter: blur(4px) saturate(1.1);
+  backdrop-filter: blur(4px) saturate(1.1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.46);
+}
+
+.social-icon-shell {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.social-icon {
+  position: relative;
+  z-index: 1;
+  width: clamp(1.3rem, 2.55vw, 2.05rem);
+  height: clamp(1.3rem, 2.55vw, 2.05rem);
+  color: #111111;
+}
+
+.social-icon-shell .social-icon--soundcloud {
+  width: clamp(1.45rem, 2.8vw, 2.25rem);
+  height: clamp(1.45rem, 2.8vw, 2.25rem);
+}
+
+.social-cell:hover .social-icon-shell,
+.social-cell:focus-visible .social-icon-shell {
+  background: transparent;
+  box-shadow: none;
+}
+
+.social-cell:hover,
+.social-cell:focus-visible {
+  border-color: rgba(255, 255, 255, 0.62);
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.28),
+    rgba(255, 255, 255, 0.18)
+  );
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.44),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+}
+
+@media (min-width: 768px) {
+  .social-icon {
+    width: clamp(1.6rem, 2.15vw, 2.35rem);
+    height: clamp(1.6rem, 2.15vw, 2.35rem);
+  }
+
+  .social-icon-shell .social-icon--soundcloud {
+    width: clamp(1.75rem, 2.35vw, 2.5rem);
+    height: clamp(1.75rem, 2.35vw, 2.5rem);
+  }
+}
+
+@keyframes productFadeInOrganic {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.97);
+    filter: blur(2px);
+  }
+  55% {
+    opacity: 0.72;
+    transform: translate3d(0, 4px, 0) scale(1.01);
+    filter: blur(0.4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .products-reveal > .product-cta {
+    opacity: 0;
+    animation: productFadeInOrganic 1.35s cubic-bezier(0.2, 0.82, 0.22, 1) forwards;
+  }
+
+  .products-reveal > .product-cta:nth-child(1) {
+    animation-delay: 0.34s;
+  }
+  .products-reveal > .product-cta:nth-child(2) {
+    animation-delay: 0.54s;
+  }
+  .products-reveal > .product-cta:nth-child(3) {
+    animation-delay: 0.75s;
+  }
+  .products-reveal > .product-cta:nth-child(4) {
+    animation-delay: 0.96s;
+  }
+  .products-reveal > .product-cta:nth-child(5) {
+    animation-delay: 1.16s;
+  }
+  .products-reveal > .product-cta:nth-child(6) {
+    animation-delay: 1.32s;
+  }
+  .products-reveal > .product-cta:nth-child(7) {
+    animation-delay: 1.46s;
   }
 }

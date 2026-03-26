@@ -10,9 +10,9 @@ export const productCTAs: ProductCta[] = [
   { kind: "link", label: "Cycler", href: "https://cycler.io" },
   { kind: "toast", label: "Joanne", message: "Coming Soon!" },
   {
-    kind: "toast",
-    label: "Growth Marketer",
-    message: "Coming soon!",
+    kind: "link",
+    label: "REPLIES PILOT",
+    href: "https://getrepliespilot.com",
   },
   { kind: "link", label: "My Company", href: "https://bimross.com" },
 ];
