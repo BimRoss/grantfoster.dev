@@ -22,7 +22,9 @@ const ibmPlex = IBM_Plex_Sans({
 });
 
 const siteUrl = "https://grantfoster.dev";
-
+const siteName = "Grant Foster";
+const siteTitle = "Grant Foster | AI Staff Engineer";
+const ogImagePath = "/opengraph-image";
 const siteDescription =
   "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.";
 
@@ -41,17 +43,25 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: siteUrl,
-      name: "Grant Foster",
+      name: siteName,
       description: siteDescription,
       publisher: { "@id": `${siteUrl}/#person` },
+      inLanguage: "en-US",
     },
     {
       "@type": "Person",
       "@id": `${siteUrl}/#person`,
-      name: "Grant Foster",
+      name: siteName,
       url: siteUrl,
       description: siteDescription,
+      email: "mailto:grantdfoster@gmail.com",
+      jobTitle: "AI Staff Engineer",
       sameAs,
+      worksFor: {
+        "@type": "Organization",
+        name: "BimRoss",
+        url: "https://bimross.com",
+      },
     },
   ],
 };
@@ -61,12 +71,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  applicationName: siteName,
+  category: "technology",
   icons: {
-    icon: [{ url: "/logo.png", type: "image/png" }],
-    apple: [{ url: "/logo.png", type: "image/png" }],
+    icon: [{ url: "/icon", type: "image/png" }],
+    apple: [{ url: "/icon", type: "image/png" }],
   },
   title: {
-    default: "Grant Foster | AI Staff Engineer",
+    default: siteTitle,
     template: "%s · Grant Foster",
   },
   description: siteDescription,
@@ -80,26 +92,27 @@ export const metadata: Metadata = {
     "Invoice Pilot",
   ],
   openGraph: {
-    title: "Grant Foster | AI Staff Engineer",
+    title: siteTitle,
     description: siteDescription,
     url: siteUrl,
-    siteName: "Grant Foster",
+    siteName,
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/logo.png",
-        width: 522,
-        height: 582,
-        alt: "Grant Foster",
+        url: ogImagePath,
+        width: 1200,
+        height: 630,
+        alt: "Grant Foster - AI staff engineer, Bittensor miner, and operator",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grant Foster | AI Staff Engineer",
+    title: siteTitle,
     description: siteDescription,
-    images: ["/logo.png"],
+    images: [ogImagePath],
+    creator: "@geeeeeeemoney",
   },
   robots: {
     index: true,
