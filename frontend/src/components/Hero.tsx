@@ -1,17 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 
-import NetworkBackdrop from "@/components/NetworkBackdrop";
+import NetworkBackdrop, {
+  type NetworkBackdropHandle,
+} from "@/components/NetworkBackdrop";
 import { productCTAs } from "@/data/products";
 
 import { useSiteToast } from "./ToastProvider";
 
 const ctaClassName =
-  "hero-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center border border-zinc-200/90 bg-white px-10 py-4 font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900 shadow-[0_1px_0_rgba(255,255,255,0.9),0_8px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,1)] transition hover:border-zinc-300 hover:bg-zinc-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40 md:min-w-[14rem] md:px-12 md:py-5";
+  "hero-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center border border-zinc-200/90 bg-white/78 px-10 py-4 font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900 shadow-[0_1px_0_rgba(255,255,255,0.65),0_8px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-md transition hover:border-zinc-300 hover:bg-white/88 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40 md:bg-white md:shadow-[0_1px_0_rgba(255,255,255,0.9),0_8px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,1)] md:backdrop-blur-none md:hover:bg-zinc-50 md:min-w-[14rem] md:px-12 md:py-5";
 
 export function Hero() {
   const { showToast } = useSiteToast();
+  const networkRef = useRef<NetworkBackdropHandle>(null);
 
   return (
     <>
@@ -20,7 +24,7 @@ export function Hero() {
         aria-labelledby="hero-heading"
       >
         <div className="absolute inset-0 z-0">
-          <NetworkBackdrop />
+          <NetworkBackdrop ref={networkRef} />
         </div>
         <div
           className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_85%_55%_at_50%_35%,rgba(0,0,0,0.045),transparent_60%)]"
@@ -28,8 +32,22 @@ export function Hero() {
         />
 
         <div className="pointer-events-none relative z-10 mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col md:block md:flex-none">
-          <div className="hero-reveal flex min-h-0 flex-1 flex-col gap-6 md:h-auto md:flex-none md:flex-row md:items-end md:justify-between md:gap-12 md:gap-y-8 lg:gap-16">
-            <div className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left lg:max-w-3xl">
+          <div className="hero-reveal flex min-h-0 flex-1 flex-col gap-6 md:h-auto md:flex-none md:flex-row md:items-center md:justify-between md:gap-12 md:gap-y-8 lg:gap-16">
+            <div
+              className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left max-md:cursor-pointer max-md:active:opacity-[0.92] max-md:transition-opacity lg:max-w-3xl"
+              onClick={(e) => {
+                if (
+                  typeof window !== "undefined" &&
+                  window.matchMedia("(min-width: 768px)").matches
+                ) {
+                  return;
+                }
+                networkRef.current?.triggerBurstAtClient(
+                  e.clientX,
+                  e.clientY,
+                );
+              }}
+            >
               <p className="border-l-2 border-black/40 pl-4 font-mono text-[10px] font-medium leading-relaxed tracking-[0.2em] text-zinc-800 sm:text-xs sm:tracking-[0.18em]">
                 serial creator, good enough DJ
               </p>
@@ -47,7 +65,7 @@ export function Hero() {
                   aria-hidden
                   className="h-20 w-auto shrink-0 brightness-0 sm:h-24 md:h-28 lg:h-32"
                 />
-                <span className="bg-gradient-to-b from-black via-zinc-800 to-zinc-500 bg-clip-text text-5xl font-semibold leading-[0.95] tracking-tight text-transparent md:text-7xl lg:text-8xl">
+                <span className="text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl">
                   rantFoster
                 </span>
               </h1>

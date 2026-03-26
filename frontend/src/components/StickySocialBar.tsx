@@ -7,7 +7,7 @@ import { socials } from "@/data/socials";
 import { EmailSocialLink } from "./EmailSocialLink";
 import { useSiteToast } from "./ToastProvider";
 
-const CALL_TOAST_MESSAGE = "We're an AI company — we don't have a phone line!";
+const CALL_TOAST_MESSAGE = "yeah right, you have enough info";
 
 export function StickySocialBar() {
   const { showToast } = useSiteToast();
@@ -28,7 +28,9 @@ export function StickySocialBar() {
         {socials.map(({ label, icon: Icon, ...rest }) => {
           const className =
             "group relative flex min-h-[44px] min-w-0 flex-1 basis-0 items-center justify-center border-r border-white/50 bg-white/45 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-md transition-[background-color,transform,box-shadow] last:border-r-0 hover:bg-white/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(255,255,255,0.4)] active:scale-[0.98] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60 md:min-h-0";
-          const icon = <Icon className="size-6 shrink-0 text-black md:size-7" aria-hidden />;
+          const iconSize =
+            label === "SoundCloud" ? "size-7 shrink-0 text-black md:size-[1.75rem]" : "size-6 shrink-0 text-black md:size-7";
+          const icon = <Icon className={iconSize} aria-hidden />;
 
           if ("action" in rest && rest.action === "call") {
             return (

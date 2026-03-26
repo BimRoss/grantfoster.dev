@@ -38,7 +38,9 @@ export const metadata: Metadata = {
     "Bittensor",
     "Subnet 42",
     "Subnet Signal",
+    "Cycler",
     "GoTrader",
+    "Invoice Pilot",
   ],
   openGraph: {
     title: "Grant Foster — builder & experiments",

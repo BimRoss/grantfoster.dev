@@ -27,14 +27,14 @@ export const socials: SocialEntry[] = [
   },
   { label: "YouTube", href: "https://www.youtube.com/@geeeeemoney", icon: YouTubeIcon },
   {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/grantdfoster/",
-    icon: LinkedInIcon,
-  },
-  {
     label: "SoundCloud",
     href: "https://on.soundcloud.com/lTt69LlmWrZRAkqvH9",
     icon: SoundCloudIcon,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/grantdfoster/",
+    icon: LinkedInIcon,
   },
   {
     label: "Instagram",

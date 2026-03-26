@@ -1,14 +1,20 @@
 "use client";
 
 import {
+  forwardRef,
   useCallback,
   useEffect,
+  useImperativeHandle,
   useLayoutEffect,
   useMemo,
   useRef,
   useState,
   type MouseEvent,
 } from "react";
+
+export type NetworkBackdropHandle = {
+  triggerBurstAtClient: (clientX: number, clientY: number) => void;
+};
 
 /** Orthogonal polylines (horizontal + vertical only) — Bittensor-style mesh */
 const EDGE_PATHS = [
@@ -336,7 +342,8 @@ function ClickBurstWave({
   );
 }
 
-export default function NetworkBackdrop() {
+const NetworkBackdrop = forwardRef<NetworkBackdropHandle, object>(
+  function NetworkBackdrop(_props, ref) {
   const containerRef = useRef<HTMLDivElement>(null);
   const pendingRef = useRef<{ nx: number; ny: number } | null>(null);
   const rafRef = useRef(0);
@@ -348,6 +355,39 @@ export default function NetworkBackdrop() {
   const [clickBursts, setClickBursts] = useState<
     { id: string; indices: number[]; sx: number; sy: number }[]
   >([]);
+
+  const enqueueBurst = useCallback(
+    (sx: number, sy: number) => {
+      if (reducedMotion) return;
+      const indices = nearestPathIndicesByPolylineDistance(
+        sx,
+        sy,
+        CLICK_BURST_PATHS,
+      );
+      if (indices.length === 0) return;
+      const id = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
+      setClickBursts((prev) => [...prev, { id, indices, sx, sy }]);
+      window.setTimeout(() => {
+        setClickBursts((prev) => prev.filter((b) => b.id !== id));
+      }, CLICK_BURST_CLEANUP_MS);
+    },
+    [reducedMotion],
+  );
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      triggerBurstAtClient: (clientX: number, clientY: number) => {
+        const el = containerRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const sx = ((clientX - rect.left) / rect.width) * VIEW_W;
+        const sy = ((clientY - rect.top) / rect.height) * VIEW_H;
+        enqueueBurst(sx, sy);
+      },
+    }),
+    [enqueueBurst],
+  );
 
   const flushMouse = useCallback(() => {
     rafRef.current = 0;
@@ -386,25 +426,14 @@ export default function NetworkBackdrop() {
 
   const handleBackdropClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
-      if (reducedMotion) return;
       const el = containerRef.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const sx = ((event.clientX - rect.left) / rect.width) * VIEW_W;
       const sy = ((event.clientY - rect.top) / rect.height) * VIEW_H;
-      const indices = nearestPathIndicesByPolylineDistance(
-        sx,
-        sy,
-        CLICK_BURST_PATHS,
-      );
-      if (indices.length === 0) return;
-      const id = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
-      setClickBursts((prev) => [...prev, { id, indices, sx, sy }]);
-      window.setTimeout(() => {
-        setClickBursts((prev) => prev.filter((b) => b.id !== id));
-      }, CLICK_BURST_CLEANUP_MS);
+      enqueueBurst(sx, sy);
     },
-    [reducedMotion],
+    [enqueueBurst],
   );
 
   const pointerActive = mouseSvg != null;
@@ -450,7 +479,7 @@ export default function NetworkBackdrop() {
       onClick={handleBackdropClick}
     >
       <svg
-        className="network-bg"
+        className="network-bg max-md:origin-center max-md:scale-[1.12]"
         viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
         aria-hidden="true"
         preserveAspectRatio="xMidYMid slice"
@@ -633,4 +662,6 @@ export default function NetworkBackdrop() {
       </svg>
     </div>
   );
-}
+});
+
+export default NetworkBackdrop;
