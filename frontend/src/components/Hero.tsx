@@ -53,9 +53,9 @@ export function Hero() {
               </p>
               <h1
                 id="hero-heading"
-                aria-label="Grant Foster"
                 className="font-display mt-5 flex flex-row flex-wrap items-end gap-x-2 gap-y-1 sm:mt-7 sm:flex-nowrap sm:gap-x-3 md:gap-x-4"
               >
+                <span className="sr-only">Grant Foster</span>
                 <Image
                   src="/logo.png"
                   alt=""
@@ -65,7 +65,10 @@ export function Hero() {
                   aria-hidden
                   className="h-20 w-auto shrink-0 brightness-0 sm:h-24 md:h-28 lg:h-32"
                 />
-                <span className="text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl">
+                <span
+                  className="text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl"
+                  aria-hidden
+                >
                   rantFoster
                 </span>
               </h1>

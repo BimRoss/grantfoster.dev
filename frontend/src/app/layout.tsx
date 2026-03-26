@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, Syne } from "next/font/google";
 import Script from "next/script";
 
 import { ToastProvider } from "@/components/ToastProvider";
+import { socials } from "@/data/socials";
 
 import "./globals.css";
 
@@ -22,8 +23,44 @@ const ibmPlex = IBM_Plex_Sans({
 
 const siteUrl = "https://grantfoster.dev";
 
+const siteDescription =
+  "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.";
+
+const sameAs = socials.flatMap((s) =>
+  "href" in s &&
+  typeof s.href === "string" &&
+  /^https?:\/\//.test(s.href)
+    ? [s.href]
+    : [],
+);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "Grant Foster",
+      description: siteDescription,
+      publisher: { "@id": `${siteUrl}/#person` },
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Grant Foster",
+      url: siteUrl,
+      description: siteDescription,
+      sameAs,
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
     apple: [{ url: "/logo.png", type: "image/png" }],
@@ -32,8 +69,7 @@ export const metadata: Metadata = {
     default: "Grant Foster | AI Staff Engineer",
     template: "%s · Grant Foster",
   },
-  description:
-    "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
+  description: siteDescription,
   keywords: [
     "Grant Foster",
     "Bittensor",
@@ -45,18 +81,25 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Grant Foster | AI Staff Engineer",
-    description:
-      "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
+    description: siteDescription,
     url: siteUrl,
     siteName: "Grant Foster",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 522,
+        height: 582,
+        alt: "Grant Foster",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Grant Foster | AI Staff Engineer",
-    description:
-      "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
+    description: siteDescription,
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -82,6 +125,13 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlex.variable} h-full overflow-hidden bg-white text-zinc-950`}
     >
       <body className="relative z-0 h-dvh overflow-hidden bg-white text-zinc-950 antialiased">
+        <Script
+          id="ld-json-grantfoster"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
         <ToastProvider>
           <div className="relative z-10 flex h-full min-h-0 flex-col overflow-hidden">
             {children}
