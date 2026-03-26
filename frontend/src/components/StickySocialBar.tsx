@@ -22,7 +22,7 @@ export function StickySocialBar() {
     <div
       className="relative z-[60] w-full shrink-0 border-t border-white/80 bg-gradient-to-b from-white/58 via-white/42 to-white/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.98),0_-10px_36px_rgba(0,0,0,0.06)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:from-white/52 supports-[backdrop-filter]:via-white/36 supports-[backdrop-filter]:to-white/22"
     >
-      <nav aria-labelledby="social-heading" className="mx-auto w-full max-w-7xl">
+      <nav aria-labelledby="social-heading" className="w-full">
         <h2 id="social-heading" className="sr-only">
           Social & contact
         </h2>
