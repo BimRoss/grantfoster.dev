@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo.png", type: "image/png" }],
   },
   title: {
-    default: "Grant Foster — builder & experiments",
+    default: "Grant Foster - Personal Website",
     template: "%s · Grant Foster",
   },
   description:
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "Invoice Pilot",
   ],
   openGraph: {
-    title: "Grant Foster — builder & experiments",
+    title: "Grant Foster - Personal Website",
     description:
       "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
     url: siteUrl,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grant Foster — builder & experiments",
+    title: "Grant Foster - Personal Website",
     description:
       "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
   },
