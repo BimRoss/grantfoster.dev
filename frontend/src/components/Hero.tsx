@@ -72,7 +72,7 @@ export function Hero() {
                   rantFoster
                 </span>
               </h1>
-              <p className="mt-5 font-sans text-base leading-relaxed text-zinc-900 md:mt-7 md:text-lg md:leading-relaxed lg:text-xl">
+              <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
                 Bittensor miner & operator, I develop AI trading systems and self-improving UI.{" "}
                 <br className="hidden md:block" aria-hidden />
                 Agentic backends, distributed infrastructure, and the experiments in between.

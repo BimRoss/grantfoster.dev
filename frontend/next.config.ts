@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 85, 92, 100],
   },
   async rewrites() {
-    return [{ source: "/icon.png", destination: "/logo.png" }];
+    return [{ source: "/icon.png", destination: "/icon" }];
   },
   async headers() {
     return [
@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/logo.png",
+        source: "/icon",
         headers: [
           {
             key: "Cache-Control",
