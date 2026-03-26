@@ -19,7 +19,9 @@ export function StickySocialBar() {
   const n = socials.length;
 
   return (
-    <div className="relative z-[60] w-full shrink-0 border-t border-white/70 bg-gradient-to-b from-white/55 via-white/40 to-white/30 shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_-8px_32px_rgba(0,0,0,0.05)] backdrop-blur-2xl backdrop-saturate-150">
+    <div
+      className="relative z-[60] w-full shrink-0 border-t border-white/80 bg-gradient-to-b from-white/58 via-white/42 to-white/28 shadow-[inset_0_1px_0_rgba(255,255,255,0.98),0_-10px_36px_rgba(0,0,0,0.06)] backdrop-blur-2xl backdrop-saturate-150 supports-[backdrop-filter]:from-white/52 supports-[backdrop-filter]:via-white/36 supports-[backdrop-filter]:to-white/22"
+    >
       <nav aria-labelledby="social-heading" className="mx-auto w-full max-w-7xl">
         <h2 id="social-heading" className="sr-only">
           Social & contact
@@ -30,7 +32,7 @@ export function StickySocialBar() {
         >
         {socials.map(({ label, icon: Icon, ...rest }) => {
           const className =
-            "group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-white/50 bg-white/45 shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-md transition-[background-color,transform,box-shadow] last:border-r-0 hover:bg-white/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,1),0_0_0_1px_rgba(255,255,255,0.4)] active:scale-[0.98] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60";
+            "group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-white/65 bg-gradient-to-b from-white/72 via-white/52 to-white/40 shadow-[0_0_0_1px_rgba(255,255,255,0.45),inset_0_1px_0_rgba(255,255,255,0.95)] backdrop-blur-xl backdrop-saturate-150 transition-[background-color,transform,box-shadow,filter] last:border-r-0 hover:from-white/88 hover:via-white/72 hover:to-white/58 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.65),inset_0_1px_0_rgba(255,255,255,1)] active:scale-[0.98] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60";
           const iconSize =
             label === "SoundCloud" ? "size-7 shrink-0 text-black md:size-[1.75rem]" : "size-6 shrink-0 text-black md:size-7";
           const icon = <Icon className={iconSize} aria-hidden />;

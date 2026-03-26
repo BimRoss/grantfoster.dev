@@ -10,8 +10,19 @@ import { productCTAs } from "@/data/products";
 
 import { useSiteToast } from "./ToastProvider";
 
-const ctaClassName =
-  "hero-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center border border-zinc-200/90 bg-white/78 px-10 py-4 font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900 shadow-[0_1px_0_rgba(255,255,255,0.65),0_8px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.85)] backdrop-blur-md transition hover:border-zinc-300 hover:bg-white/88 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40 md:bg-white md:shadow-[0_1px_0_rgba(255,255,255,0.9),0_8px_24px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,1)] md:backdrop-blur-none md:hover:bg-zinc-50 md:min-w-[14rem] md:px-12 md:py-5";
+/** Light canvas: frosted white glass (blur + gradient + rim), all breakpoints — not flat white on md */
+const ctaClassName = [
+  "hero-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center px-10 py-4",
+  "border border-white/80 bg-gradient-to-br from-white/90 via-white/76 to-white/62",
+  "shadow-[0_0_0_1px_rgba(255,255,255,0.55),0_1px_0_rgba(255,255,255,0.92),0_10px_32px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.98)]",
+  "backdrop-blur-xl backdrop-saturate-150",
+  "font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900",
+  "transition-[border-color,box-shadow,background-color,filter]",
+  "hover:border-white hover:from-white/96 hover:via-white/88 hover:to-white/78",
+  "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.75),0_1px_0_rgba(255,255,255,1),0_14px_40px_rgba(0,0,0,0.08),inset_0_1px_0_rgba(255,255,255,1)]",
+  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40",
+  "md:min-w-[14rem] md:px-12 md:py-5",
+].join(" ");
 
 export function Hero() {
   const { showToast } = useSiteToast();
