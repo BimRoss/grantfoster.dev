@@ -4,5 +4,6 @@ twitter - https://twitter.com/geeeeeeemoney
 telegram - https://t.me/geeeemoney
 discord - https://discordapp.com/users/449222160687300608
 youtube - https://www.youtube.com/@geeeeemoney
+linkedin - https://www.linkedin.com/in/grantdfoster/
 instagram - https://www.instagram.com/grantdavisfoster/
 soundcloud - https://on.soundcloud.com/lTt69LlmWrZRAkqvH9

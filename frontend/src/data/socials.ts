@@ -2,7 +2,10 @@ import type { ReactElement, SVGProps } from "react";
 import {
   DiscordIcon,
   EmailIcon,
+  InstagramIcon,
+  LinkedInIcon,
   PhoneIcon,
+  SoundCloudIcon,
   TelegramIcon,
   TwitterXIcon,
   YouTubeIcon,
@@ -23,6 +26,21 @@ export const socials: SocialEntry[] = [
     icon: DiscordIcon,
   },
   { label: "YouTube", href: "https://www.youtube.com/@geeeeemoney", icon: YouTubeIcon },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/grantdfoster/",
+    icon: LinkedInIcon,
+  },
+  {
+    label: "SoundCloud",
+    href: "https://on.soundcloud.com/lTt69LlmWrZRAkqvH9",
+    icon: SoundCloudIcon,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/grantdavisfoster/",
+    icon: InstagramIcon,
+  },
   {
     label: "Email",
     href: "mailto:grantdfoster@gmail.com",
