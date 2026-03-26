@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Grant Foster",
   },
   description:
-    "Bittensor infrastructure, trading systems, and self-improving UI—from agentic backends to the experiments in between.",
+    "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
   keywords: [
     "Grant Foster",
     "Bittensor",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Grant Foster — builder & experiments",
     description:
-      "Bittensor infrastructure, trading systems, and self-improving UI—from agentic backends to the experiments in between.",
+      "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
     url: siteUrl,
     siteName: "Grant Foster",
     locale: "en_US",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Grant Foster — builder & experiments",
     description:
-      "Bittensor infrastructure, trading systems, and self-improving UI—from agentic backends to the experiments in between.",
+      "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
   },
   robots: {
     index: true,
@@ -63,7 +63,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -74,9 +75,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${ibmPlex.variable} h-full overflow-hidden`}
+      className={`${syne.variable} ${ibmPlex.variable} h-full overflow-hidden bg-white text-zinc-950`}
     >
-      <body className="relative z-0 h-dvh overflow-hidden bg-[#000000] antialiased">
+      <body className="relative z-0 h-dvh overflow-hidden bg-white text-zinc-950 antialiased">
         <ToastProvider>
           <div className="relative z-10 flex h-full min-h-0 flex-col overflow-hidden">
             {children}

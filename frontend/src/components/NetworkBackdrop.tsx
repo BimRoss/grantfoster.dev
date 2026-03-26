@@ -262,10 +262,12 @@ function proximity(
 }
 
 function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(false);
+  const [reduced, setReduced] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
     const fn = () => setReduced(mq.matches);
     mq.addEventListener("change", fn);
     return () => mq.removeEventListener("change", fn);
@@ -309,7 +311,7 @@ function ClickBurstWave({
   return (
     <circle
       r={r}
-      fill="#ffffff"
+      fill="#111111"
       filter="url(#nodeBloom)"
       opacity={0}
     >
@@ -544,7 +546,7 @@ export default function NetworkBackdrop() {
                   <circle
                     r={ringR + 8 * p}
                     fill="none"
-                    stroke="rgba(255,255,255,0.35)"
+                    stroke="rgba(0,0,0,0.28)"
                     strokeWidth={0.35 + 0.4 * p}
                     className="network-node-ripple"
                     style={{ animationDelay: `${(i % 7) * 0.12}s` }}

@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg-deep: #000000;
-  --color-fg: #fafafa;
-  --color-fg-muted: #a1a1aa;
+  --color-bg-deep: #ffffff;
+  --color-fg: #111111;
+  --color-fg-muted: #52525b;
   /* Reserved for a future accent pass */
-  --color-accent: #ffffff;
-  --color-accent-muted: rgba(255, 255, 255, 0.35);
+  --color-accent: #111111;
+  --color-accent-muted: rgba(17, 17, 17, 0.2);
 }
 
 @theme inline {
@@ -19,14 +19,19 @@
 html {
   height: 100%;
   overflow: hidden;
+  background-color: #ffffff;
+  color: #09090b;
+  color-scheme: light;
 }
 
 body {
+  background-color: #ffffff;
   background: var(--color-bg-deep);
   color: var(--color-fg-muted);
   margin: 0;
   min-height: 100%;
   font-family: var(--font-ibm-plex), system-ui, sans-serif;
+  color-scheme: light;
 }
 
 * {
@@ -40,7 +45,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.04;
+  opacity: 0.028;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
@@ -51,10 +56,10 @@ body::after {
   width: 100%;
   overflow: hidden;
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.06), transparent 42%),
-    radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.045), transparent 48%),
-    radial-gradient(circle at 52% 88%, rgba(255, 255, 255, 0.04), transparent 45%),
-    #000000;
+    radial-gradient(circle at 18% 22%, rgba(0, 0, 0, 0.05), transparent 42%),
+    radial-gradient(circle at 88% 12%, rgba(0, 0, 0, 0.035), transparent 48%),
+    radial-gradient(circle at 52% 88%, rgba(0, 0, 0, 0.03), transparent 45%),
+    #ffffff;
 }
 
 .network-bg {
@@ -67,7 +72,7 @@ body::after {
 
 .network-edge {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.14);
+  stroke: rgba(0, 0, 0, 0.16);
   stroke-width: 1.15;
   stroke-linecap: square;
   stroke-linejoin: miter;
@@ -75,7 +80,7 @@ body::after {
 
 .network-edge-pulse {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.45);
+  stroke: rgba(0, 0, 0, 0.42);
   stroke-width: 1.4;
   stroke-linecap: square;
   stroke-linejoin: miter;
@@ -122,12 +127,12 @@ body::after {
 
 .network-node-ring {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.35);
+  stroke: rgba(0, 0, 0, 0.25);
   stroke-width: 1;
 }
 
 .network-node-core {
-  fill: #ffffff;
+  fill: #111111;
   opacity: 0.92;
   filter: url(#nodeBloom);
 }
@@ -142,16 +147,16 @@ body::after {
   0%,
   100% {
     opacity: 0.2;
-    stroke: rgba(255, 255, 255, 0.15);
+    stroke: rgba(0, 0, 0, 0.12);
   }
   50% {
     opacity: 0.95;
-    stroke: rgba(255, 255, 255, 0.55);
+    stroke: rgba(0, 0, 0, 0.4);
   }
 }
 
 .network-packet {
-  fill: #ffffff;
+  fill: #111111;
   opacity: 0.95;
 }
 
@@ -160,8 +165,8 @@ body::after {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.14);
+  color: #111111;
 }
 
 /* Hero: staggered entrance (CSS-only, respects motion preferences) */
@@ -228,17 +233,17 @@ body::after {
 
 [data-sonner-toaster].bim-sonner [data-sonner-toast].bim-sonner-toast[data-styled="true"],
 [data-sonner-toaster].bim-sonner [data-sonner-toast][data-styled="true"] {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.07)) !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96), rgba(244, 244, 245, 0.92)) !important;
   -webkit-backdrop-filter: blur(24px) saturate(1.5);
   backdrop-filter: blur(24px) saturate(1.5);
   border-radius: 0 !important;
   border-left: none !important;
   border-right: none !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  color: #fafafa !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  color: #111111 !important;
   box-shadow:
-    0 12px 48px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    0 12px 36px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
   padding-inline: 1rem !important;
   text-align: center;
   justify-content: center;
@@ -248,8 +253,8 @@ body::after {
   [data-sonner-toaster].bim-sonner [data-sonner-toast].bim-sonner-toast[data-styled="true"],
   [data-sonner-toaster].bim-sonner [data-sonner-toast][data-styled="true"] {
     border-radius: 1rem !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.35) !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.12) !important;
+    border-right: 1px solid rgba(0, 0, 0, 0.12) !important;
     padding-inline: 2.5rem !important;
     padding-block: 1.25rem !important;
   }
@@ -259,7 +264,7 @@ body::after {
 [data-sonner-toaster].bim-sonner [data-description].bim-sonner-toast-text,
 [data-sonner-toaster].bim-sonner [data-sonner-toast][data-styled="true"] [data-title],
 [data-sonner-toaster].bim-sonner [data-sonner-toast][data-styled="true"] [data-description] {
-  color: #fafafa !important;
+  color: #111111 !important;
   font-family: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
@@ -278,11 +283,11 @@ body::after {
 }
 
 [data-sonner-toaster].bim-sonner [data-close-button].bim-sonner-close {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
-  color: #fafafa !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  color: #111111 !important;
 }
 
 [data-sonner-toaster].bim-sonner [data-close-button].bim-sonner-close:hover {
-  background: rgba(255, 255, 255, 0.18) !important;
+  background: rgba(0, 0, 0, 0.1) !important;
 }

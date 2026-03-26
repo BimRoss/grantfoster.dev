@@ -4,7 +4,7 @@ import { StickySocialBar } from "@/components/StickySocialBar";
 
 export default function Home() {
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-white">
       <Hero />
       <footer className="relative z-20 flex shrink-0 flex-col" role="contentinfo">
         <StickySocialBar />
