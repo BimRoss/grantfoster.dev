@@ -22,6 +22,10 @@ html {
   background-color: #ffffff;
   color: #09090b;
   color-scheme: light;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 body {
@@ -32,6 +36,9 @@ body {
   min-height: 100%;
   font-family: var(--font-ibm-plex), system-ui, sans-serif;
   color-scheme: light;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 * {
@@ -165,8 +172,8 @@ body::after {
 }
 
 ::selection {
-  background: rgba(0, 0, 0, 0.14);
-  color: #111111;
+  background: transparent;
+  color: inherit;
 }
 
 /* Hero: staggered entrance (CSS-only, respects motion preferences) */
