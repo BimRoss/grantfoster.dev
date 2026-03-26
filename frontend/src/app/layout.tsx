@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Syne } from "next/font/google";
+import Script from "next/script";
 
 import { ToastProvider } from "@/components/ToastProvider";
 
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/logo.png", type: "image/png" }],
   },
   title: {
-    default: "Grant Foster - Personal Website",
+    default: "Grant Foster | AI Staff Engineer",
     template: "%s · Grant Foster",
   },
   description:
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     "Invoice Pilot",
   ],
   openGraph: {
-    title: "Grant Foster - Personal Website",
+    title: "Grant Foster | AI Staff Engineer",
     description:
       "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
     url: siteUrl,
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grant Foster - Personal Website",
+    title: "Grant Foster | AI Staff Engineer",
     description:
       "Bittensor miner & operator, developing AI trading systems and self-improving UI. Agentic backends, distributed infrastructure, and the experiments in between.",
   },
@@ -73,6 +74,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaMeasurementID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html
       lang="en"
@@ -84,6 +87,20 @@ export default function RootLayout({
             {children}
           </div>
         </ToastProvider>
+        {gaMeasurementID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaMeasurementID}');`}
+            </Script>
+          </>
+        ) : null}
       </body>
     </html>
   );

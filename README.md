@@ -22,6 +22,12 @@ GitHub Actions (`.github/workflows/grantfoster-images.yml`) builds the **product
 | `DOCKERHUB_TOKEN` | Docker Hub access token |
 | `RANCHER_ADMIN_REPO_TOKEN` | PAT with push access to `bimross/rancher-admin` (for the gitops job on tag) |
 
+Repository variable:
+
+| Variable | Value |
+|----------|-------|
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | `G-YSH2D4182J` |
+
 ### Release
 
 1. Commit and push to `main` / `master`.

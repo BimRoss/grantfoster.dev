@@ -14,6 +14,8 @@ COPY frontend/package.json frontend/package-lock.json ./
 RUN npm ci
 
 COPY frontend/ ./
+ARG NEXT_PUBLIC_GA_MEASUREMENT_ID=""
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$NEXT_PUBLIC_GA_MEASUREMENT_ID
 RUN npm run build
 
 ENV NODE_ENV=production
