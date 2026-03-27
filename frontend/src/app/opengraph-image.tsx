@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { siteDescription } from "@/data/site";
+
 export const size = {
   width: 1200,
   height: 630,
@@ -101,9 +103,7 @@ export default function OpenGraphImage() {
                 color: "#18181b",
               }}
             >
-              Bittensor miner and operator, specialized in agentic backends and
-              distributed infrastructure. AI trading systems, self-improving
-              UI&apos;s, and experiments in between.
+              {siteDescription}
             </div>
             <div
               style={{

@@ -7,6 +7,7 @@ import NetworkBackdrop, {
   type NetworkBackdropHandle,
 } from "@/components/NetworkBackdrop";
 import { productCTAs } from "@/data/products";
+import { siteDescription } from "@/data/site";
 
 import { useSiteToast } from "./ToastProvider";
 
@@ -85,10 +86,7 @@ export function Hero() {
                 </span>
               </h1>
               <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
-                Bittensor miner & operator, specialized in agentic-powered backends and distributed
-                infrastructure.{"  "}
-                <br className="hidden md:block" aria-hidden />I develop AI trading systems,
-                self-improving UI's, and the experiments in between.
+                {siteDescription}
               </p>
             </div>
 

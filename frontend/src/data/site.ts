@@ -6,7 +6,7 @@ export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 export const siteDescription =
-  "Bittensor miner & operator, specialized in agentic-powered backends and distributed infrastructure.  I develop AI trading systems, self-improving UI's, and the experiments in between.";
+  "Bittensor miner & operator, specialized in agentic-powered backends and distributed infrastructure. I develop AI trading systems, self-improving UI's, and the experiments in between.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
