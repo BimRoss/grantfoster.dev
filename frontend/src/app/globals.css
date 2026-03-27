@@ -491,6 +491,9 @@ body::after {
 /* Footer social (light theme): glass pane + thin white rim */
 .social-cell {
   isolation: isolate;
+  transform: scale(1);
+  transform-origin: center;
+  will-change: transform;
   background: linear-gradient(
     to bottom right,
     rgba(255, 255, 255, 0.34),
@@ -548,17 +551,11 @@ body::after {
 .social-cell:focus-visible .social-icon-shell {
   background: transparent;
   box-shadow: none;
-  transform: translate3d(0, -1px, 0);
-}
-
-.social-cell:hover .social-icon,
-.social-cell:focus-visible .social-icon {
-  transform: scale(1.08);
-  filter: saturate(1.04);
 }
 
 .social-cell:hover,
 .social-cell:focus-visible {
+  transform: scale(1.12);
   border-color: rgba(255, 255, 255, 0.55);
   background: linear-gradient(
     to bottom right,

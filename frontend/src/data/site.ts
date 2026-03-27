@@ -36,6 +36,11 @@ export const projects = [
     description: "Product experiments and iterative automation tooling.",
   },
   {
+    name: "Joanne",
+    url: SITE_URL,
+    description: "Resume and job-search workflows (coming soon).",
+  },
+  {
     name: "BimRoss",
     url: "https://bimross.com",
     description: "Primary company site and infrastructure operator profile.",
