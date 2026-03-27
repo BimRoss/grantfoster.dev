@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Syne } from "next/font/google";
+import { IBM_Plex_Sans, Sora } from "next/font/google";
 import Script from "next/script";
 
 import { JsonLd } from "@/components/JsonLd";
@@ -15,10 +15,10 @@ import {
 
 import "./globals.css";
 
-const syne = Syne({
+const sora = Sora({
   weight: ["600", "700", "800"],
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-title",
   display: "swap",
 });
 
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     "Subnet 42",
     "Subnet Signal",
     "Cycler",
-    "GoTrader",
+    "Thread Pilot",
     "Invoice Pilot",
   ],
   openGraph: {
@@ -100,7 +100,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${ibmPlex.variable} h-full overflow-hidden bg-white text-zinc-950`}
+      className={`${sora.variable} ${ibmPlex.variable} h-full overflow-hidden bg-white text-zinc-950`}
     >
       {/* Extensions (e.g. ColorZilla) inject attrs on <body> before hydration — suppress avoids false-positive mismatch warnings in dev */}
       <body

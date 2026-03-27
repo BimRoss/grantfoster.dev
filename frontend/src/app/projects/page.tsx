@@ -6,7 +6,7 @@ import { buildProjectsPageJsonLd, projects } from "@/data/site";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Project directory for Grant Foster, including Subnet Signal, GoTrader, Invoice Pilot, and Cycler.",
+    "Project directory for Grant Foster, including Subnet Signal, Thread Pilot, Invoice Pilot, and Cycler.",
   alternates: {
     canonical: "/projects",
   },

@@ -32,7 +32,7 @@ export function StickySocialBar() {
         >
         {socials.map(({ label, icon: Icon, ...rest }) => {
           const className =
-            "social-cell group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-black/10 transition-[transform,border-color,box-shadow,background] duration-300 ease-in-out last:border-r-0 active:scale-[0.98] hover:scale-[1.04] focus-visible:scale-[1.04] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60";
+            "social-cell group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-black/10 transition-[transform,border-color,box-shadow,background,opacity,filter] duration-[2000ms] ease-in-out last:border-r-0 active:scale-[0.98] hover:scale-[1.04] focus-visible:scale-[1.04] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60 md:aspect-auto md:h-[5.5rem] md:max-h-[5.5rem] md:px-3 md:py-2.5";
           const icon = (
             <span className="social-icon-shell" aria-hidden>
               <Icon

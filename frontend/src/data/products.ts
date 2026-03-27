@@ -5,14 +5,9 @@ export type ProductCta =
 /** Stacked hero CTAs — same chip pattern as bimross-website */
 export const productCTAs: ProductCta[] = [
   { kind: "link", label: "Subnet Signal", href: "https://subnetsignal.com" },
-  { kind: "link", label: "GoTrader", href: "https://gotrader.gopher-ai.com" },
-  { kind: "link", label: "Invoice Pilot", href: "https://getinvoicepilot.com" },
+  { kind: "toast", label: "Thread Pilot", message: "coming soon" },
+  { kind: "toast", label: "Invoice Pilot", message: "coming soon" },
   { kind: "link", label: "Cycler", href: "https://cycler.io" },
   { kind: "toast", label: "Joanne", message: "Coming Soon!" },
-  {
-    kind: "link",
-    label: "REPLIES PILOT",
-    href: "https://getrepliespilot.com",
-  },
-  { kind: "link", label: "My Company", href: "https://bimross.com" },
+  { kind: "link", label: "BimRoss", href: "https://bimross.com" },
 ];

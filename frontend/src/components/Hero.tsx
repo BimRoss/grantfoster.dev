@@ -10,20 +10,21 @@ import { productCTAs } from "@/data/products";
 
 import { useSiteToast } from "./ToastProvider";
 
-/** Light canvas: frosted white glass (blur + gradient + rim), all breakpoints — not flat white on md */
-const ctaClassName = [
-  "hero-cta product-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center px-10 py-4",
-  "border border-white/50 bg-gradient-to-br from-white/40 via-white/28 to-white/18",
-  "shadow-[0_0_0_1px_rgba(255,255,255,0.28),0_1px_0_rgba(255,255,255,0.48),0_10px_24px_rgba(0,0,0,0.045),inset_0_1px_0_rgba(255,255,255,0.68)]",
-  "backdrop-blur-sm backdrop-saturate-115",
-  "font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900",
-  "transform-gpu scale-100 transition-[transform,border-color,box-shadow,background-color,backdrop-filter,opacity] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform",
-  "hover:border-white/65 hover:from-white/50 hover:via-white/36 hover:to-white/24",
-  "hover:shadow-[0_0_0_1px_rgba(255,255,255,0.4),0_1px_0_rgba(255,255,255,0.62),0_16px_34px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.78)]",
-  "hover:scale-[1.05] focus-visible:scale-[1.05]",
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40",
-  "md:min-w-[14rem] md:px-12 md:py-5",
-].join(" ");
+/** Light canvas: frosted white glass — fuller fill + thin white rim (border reads the pane) */
+function productCtaClassName() {
+  return [
+    "hero-cta product-cta inline-flex min-h-[52px] min-w-[12rem] items-center justify-center px-10 py-4",
+    "border border-white/45 bg-gradient-to-br from-white/44 via-white/30 to-white/18",
+    "shadow-[0_12px_36px_rgba(0,0,0,0.055),inset_0_1px_0_rgba(255,255,255,0.55)]",
+    "backdrop-blur-md backdrop-saturate-115",
+    "font-display text-sm font-semibold uppercase tracking-[0.18em] text-zinc-900",
+    "transform-gpu transition-[transform,border-color,box-shadow,background-color,backdrop-filter,opacity]",
+    "hover:border-white/60 hover:from-white/52 hover:via-white/36 hover:to-white/22",
+    "hover:shadow-[0_18px_44px_rgba(0,0,0,0.07),inset_0_1px_0_rgba(255,255,255,0.72)]",
+    "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-900/40",
+    "md:min-w-[14rem] md:px-12 md:py-5",
+  ].join(" ");
+}
 
 export function Hero() {
   const { showToast } = useSiteToast();
@@ -77,17 +78,17 @@ export function Hero() {
                   className="h-20 w-auto shrink-0 brightness-0 sm:h-24 md:h-28 lg:h-32"
                 />
                 <span
-                  className="text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl"
+                  className="font-display text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl"
                   aria-hidden
                 >
                   rantFoster
                 </span>
               </h1>
               <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
-                Bittensor miner & operator, I develop AI trading systems and self-improving UI.{" "}
-                <br className="hidden md:block" aria-hidden />
-                Specialized in agentic-powered backends, distributed infrastructure, and the
-                experiments in between.
+                Bittensor miner & operator, specialized in agentic-powered backends and distributed
+                infrastructure.{"  "}
+                <br className="hidden md:block" aria-hidden />I develop AI trading systems,
+                self-improving UI's, and the experiments in between.
               </p>
             </div>
 
@@ -96,28 +97,31 @@ export function Hero() {
               className="products-scroll products-reveal pointer-events-auto flex min-h-0 w-full flex-1 flex-col gap-4 overflow-y-auto overscroll-y-contain pb-1 sm:max-w-md md:h-auto md:w-auto md:flex-none md:shrink-0 md:items-end md:overflow-visible md:gap-5 md:pb-0"
             >
               {productCTAs.map((cta) => {
+                const ctaClass = productCtaClassName();
                 if (cta.kind === "toast") {
                   return (
-                    <button
-                      key={cta.label}
-                      type="button"
-                      onClick={() => showToast(cta.message)}
-                      className={ctaClassName}
-                    >
-                      {cta.label}
-                    </button>
+                    <div key={cta.label} className="product-cta-shell">
+                      <button
+                        type="button"
+                        onClick={() => showToast(cta.message)}
+                        className={ctaClass}
+                      >
+                        {cta.label}
+                      </button>
+                    </div>
                   );
                 }
                 return (
-                  <a
-                    key={cta.href}
-                    href={cta.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={ctaClassName}
-                  >
-                    {cta.label}
-                  </a>
+                  <div key={cta.href} className="product-cta-shell">
+                    <a
+                      href={cta.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={ctaClass}
+                    >
+                      {cta.label}
+                    </a>
+                  </div>
                 );
               })}
             </nav>

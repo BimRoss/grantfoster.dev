@@ -6,7 +6,7 @@ export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 export const siteDescription =
-  "Bittensor miner & operator, I develop AI trading systems and self-improving UI. Specialized in agentic-powered backends, distributed infrastructure, and the experiments in between.";
+  "Bittensor miner & operator, specialized in agentic-powered backends and distributed infrastructure.  I develop AI trading systems, self-improving UI's, and the experiments in between.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
@@ -20,9 +20,10 @@ export const projects = [
     description: "Bittensor tools and signals for operators and builders.",
   },
   {
-    name: "GoTrader",
-    url: "https://gotrader.gopher-ai.com",
-    description: "AI-assisted trading system and related experimentation.",
+    name: "Thread Pilot",
+    url: SITE_URL,
+    description:
+      "AI-assisted drafting for threads and long-form social workflows (coming soon).",
   },
   {
     name: "Invoice Pilot",
@@ -191,7 +192,7 @@ export function buildProjectsPageJsonLd() {
         url,
         name: "Grant Foster projects",
         description:
-          "Project directory for Grant Foster, including Subnet Signal, GoTrader, Invoice Pilot, and Cycler.",
+          "Project directory for Grant Foster, including Subnet Signal, Thread Pilot, Invoice Pilot, and Cycler.",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#person` },
         inLanguage: "en-US",

@@ -25,7 +25,7 @@
 
 ## Related Properties
 - https://subnetsignal.com
-- https://gotrader.gopher-ai.com
+- https://grantfoster.dev (Thread Pilot — coming soon)
 - https://getinvoicepilot.com
 - https://cycler.io
 - https://bimross.com

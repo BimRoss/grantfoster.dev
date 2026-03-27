@@ -101,8 +101,9 @@ export default function OpenGraphImage() {
                 color: "#18181b",
               }}
             >
-              Bittensor miner and operator building AI trading systems, agentic
-              backends, and self-improving UI.
+              Bittensor miner and operator, specialized in agentic backends and
+              distributed infrastructure. AI trading systems, self-improving
+              UI&apos;s, and experiments in between.
             </div>
             <div
               style={{
@@ -115,7 +116,7 @@ export default function OpenGraphImage() {
               }}
             >
               <span>Subnet Signal</span>
-              <span>GoTrader</span>
+              <span>Thread Pilot</span>
               <span>Invoice Pilot</span>
               <span>Cycler</span>
             </div>
