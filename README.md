@@ -1,6 +1,13 @@
 # grantfoster.dev
 
+[![GitHub stars](https://img.shields.io/github/stars/BimRoss/grantfoster.dev?style=social)](https://github.com/BimRoss/grantfoster.dev/stargazers)
+
 Personal site (Next.js), built and deployed as a Docker image.
+
+## Why This Exists
+
+Personal brand compounds.  
+This repo is the publishing engine for technical credibility and distribution.
 
 ## Local
 
@@ -36,3 +43,16 @@ Repository variable:
 ## Kubernetes
 
 Manifests live in the **rancher-admin** GitOps repo under `admin/apps/grantfoster-website/`. They share the `bimross-web` namespace and the same Ingress resource as bimross.com (host-based routing). See **rancher-admin** README for Fleet and DNS.
+
+## Related BimRoss Projects
+
+- [bimross-website](https://github.com/BimRoss/bimross-website)
+- [rancher-admin](https://github.com/BimRoss/rancher-admin)
+
+## Keywords
+
+personal website Next.js, founder website deployment, Docker website pipeline, Rancher GitOps website, technical personal branding.
+
+## Support
+
+If this setup helps your own site ship faster, star it.
