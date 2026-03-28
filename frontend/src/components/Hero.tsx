@@ -48,7 +48,7 @@ export function Hero() {
         <div className="pointer-events-none relative z-10 mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col md:block md:flex-none">
           <div className="hero-reveal flex min-h-0 flex-1 flex-col gap-6 md:h-auto md:flex-none md:flex-row md:items-center md:justify-between md:gap-12 md:gap-y-8 lg:gap-16">
             <div
-              className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left max-md:cursor-pointer max-md:active:opacity-[0.92] max-md:transition-opacity lg:max-w-3xl"
+              className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left max-md:cursor-pointer max-md:active:opacity-[0.92] max-md:transition-opacity md:min-h-[16rem] lg:max-w-3xl lg:min-h-[17rem]"
               onClick={(e) => {
                 if (
                   typeof window !== "undefined" &&
@@ -88,17 +88,6 @@ export function Hero() {
               <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
                 {siteDescription}
               </p>
-              <ul className="mt-5 grid grid-cols-1 gap-2 text-sm font-medium text-zinc-800 sm:grid-cols-3">
-                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  Bittensor + distributed systems
-                </li>
-                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  AI + operator software
-                </li>
-                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  End-to-end execution, shipped in public
-                </li>
-              </ul>
             </div>
 
             <nav
