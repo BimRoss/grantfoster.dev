@@ -7,7 +7,7 @@ import { socials } from "@/data/socials";
 import { EmailSocialLink } from "./EmailSocialLink";
 import { useSiteToast } from "./ToastProvider";
 
-const CALL_TOAST_MESSAGE = "email founder instead";
+const CALL_TOAST_MESSAGE = "email me instead";
 
 export function StickySocialBar() {
   const { showToast } = useSiteToast();
@@ -15,8 +15,6 @@ export function StickySocialBar() {
   const onCallClick = useCallback(() => {
     showToast(CALL_TOAST_MESSAGE);
   }, [showToast]);
-
-  const n = socials.length;
 
   return (
     <div
@@ -26,13 +24,10 @@ export function StickySocialBar() {
         <h2 id="social-heading" className="sr-only">
           Social & contact
         </h2>
-        <div
-          className="grid w-full"
-          style={{ gridTemplateColumns: `repeat(${n}, minmax(0, 1fr))` }}
-        >
+        <div className="social-dock flex w-full flex-row items-stretch">
         {socials.map(({ label, icon: Icon, ...rest }) => {
           const className =
-            "social-cell group relative flex aspect-square w-full min-w-0 items-center justify-center border-r border-black/10 last:border-r-0 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60 md:aspect-auto md:h-[5.5rem] md:max-h-[5.5rem] md:px-3 md:py-2.5";
+            "social-cell group relative flex min-w-0 aspect-square items-center justify-center border-r border-black/10 last:border-r-0 focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-zinc-400/60 md:aspect-auto md:h-[5.5rem] md:max-h-[5.5rem] md:px-3 md:py-2.5";
           const icon = (
             <span className="social-icon-shell" aria-hidden>
               <Icon

@@ -34,7 +34,7 @@ export function Hero() {
   return (
     <>
       <section
-        className="relative flex min-h-0 flex-1 flex-col justify-start bg-white px-5 pt-6 pb-4 md:justify-center md:px-10 md:py-8 md:pb-8"
+        className="relative flex min-h-0 flex-1 flex-col justify-start bg-white px-5 pt-6 pb-4 md:min-h-dvh md:justify-center md:px-10 md:py-8 md:pb-8"
         aria-labelledby="hero-heading"
       >
         <div className="fixed inset-0 z-0">
@@ -95,8 +95,8 @@ export function Hero() {
               className="products-scroll products-reveal pointer-events-auto flex min-h-0 w-full flex-1 flex-col gap-4 overflow-y-auto overscroll-y-contain pb-1 sm:max-w-md md:h-auto md:w-auto md:flex-none md:shrink-0 md:items-end md:overflow-visible md:gap-5 md:pb-0"
             >
               {productCTAs.map((cta) => {
-                const ctaClass = productCtaClassName();
                 if (cta.kind === "toast") {
+                  const ctaClass = productCtaClassName();
                   return (
                     <div key={cta.label} className="product-cta-shell">
                       <button
@@ -109,6 +109,7 @@ export function Hero() {
                     </div>
                   );
                 }
+                const ctaClass = productCtaClassName();
                 return (
                   <div key={cta.href} className="product-cta-shell">
                     <a

@@ -488,12 +488,24 @@ body::after {
   }
 }
 
-/* Footer social (light theme): glass pane + thin white rim */
+/* Footer social (light theme): glass pane + thin white rim.
+   Dock row: flex redistribution on hover (no transform-scale on the cell — that overlapped neighbors). */
+.social-dock {
+  --dock-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dock-duration: 420ms;
+}
+
+.social-dock .social-cell {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  min-width: 0;
+}
+
 .social-cell {
   isolation: isolate;
-  transform: scale(1);
   transform-origin: center;
-  will-change: transform;
+  will-change: flex-grow;
   background: linear-gradient(
     to bottom right,
     rgba(255, 255, 255, 0.34),
@@ -508,9 +520,20 @@ body::after {
     inset 0 1px 0 rgba(255, 255, 255, 0.42);
 }
 
-.social-cell,
+.social-cell {
+  transition:
+    flex-grow var(--dock-duration, 420ms) var(--dock-ease, cubic-bezier(0.22, 1, 0.36, 1)),
+    border-color var(--interactive-duration) var(--interactive-ease),
+    box-shadow var(--interactive-duration) var(--interactive-ease),
+    opacity var(--interactive-duration) var(--interactive-ease),
+    filter var(--interactive-duration) var(--interactive-ease),
+    background-color var(--interactive-duration) var(--interactive-ease),
+    background-image var(--interactive-duration) var(--interactive-ease),
+    backdrop-filter var(--interactive-duration) var(--interactive-ease),
+    -webkit-backdrop-filter var(--interactive-duration) var(--interactive-ease);
+}
+
 .social-icon-shell,
-.social-icon,
 .product-cta {
   transition:
     transform var(--interactive-duration) var(--interactive-ease),
@@ -522,6 +545,12 @@ body::after {
     background-image var(--interactive-duration) var(--interactive-ease),
     backdrop-filter var(--interactive-duration) var(--interactive-ease),
     -webkit-backdrop-filter var(--interactive-duration) var(--interactive-ease);
+}
+
+.social-cell .social-icon {
+  transform: scale(1);
+  transition:
+    transform var(--dock-duration, 420ms) var(--dock-ease, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
 .social-icon-shell {
@@ -553,9 +582,10 @@ body::after {
   box-shadow: none;
 }
 
-.social-cell:hover,
-.social-cell:focus-visible {
-  transform: scale(1.12);
+.social-dock .social-cell:hover,
+.social-dock .social-cell:focus-visible {
+  flex-grow: 2.25;
+  z-index: 2;
   border-color: rgba(255, 255, 255, 0.55);
   background: linear-gradient(
     to bottom right,
@@ -567,6 +597,28 @@ body::after {
     0 0 0 1px rgba(255, 255, 255, 0.3),
     0 14px 36px rgba(0, 0, 0, 0.065),
     inset 0 1px 0 rgba(255, 255, 255, 0.52);
+}
+
+.social-dock .social-cell:hover .social-icon,
+.social-dock .social-cell:focus-visible .social-icon {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-dock .social-cell:hover,
+  .social-dock .social-cell:focus-visible {
+    flex-grow: 1;
+  }
+
+  .social-dock .social-cell:hover .social-icon,
+  .social-dock .social-cell:focus-visible .social-icon {
+    transform: none;
+  }
+
+  .social-cell,
+  .social-cell .social-icon {
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @media (min-width: 768px) {
