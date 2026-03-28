@@ -6,7 +6,7 @@ export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
 export const OG_IMAGE_PATH = "/opengraph-image";
 
 export const siteDescription =
-  "I build and operate profitable AI systems for Bittensor teams. Follow for daily build logs, infrastructure lessons, and experiments shipped in public.";
+  "I build Bittensor infrastructure, AI systems, and operator software end to end, from local development through GitHub, CI/CD, and Kubernetes. I share the work and the proof in public.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
@@ -28,7 +28,7 @@ export const projects = [
   {
     name: "Invoice Pilot",
     url: "https://getinvoicepilot.com",
-    description: "Automation for invoicing and operational admin workflows.",
+    description: "Happy automations for invoicing and operational admin workflows.",
   },
   {
     name: "Cycler",
@@ -43,7 +43,7 @@ export const projects = [
   {
     name: "BimRoss",
     url: "https://bimross.com",
-    description: "Primary company site and infrastructure operator profile.",
+    description: "Founder-led company site for Bittensor infrastructure, AI systems, and operator software.",
   },
 ];
 
@@ -62,8 +62,11 @@ export const siteProfile = {
     "Bittensor",
     "Subnet 42",
     "distributed systems",
-    "AI trading systems",
-    "agentic backends",
+    "AI systems",
+    "operator software",
+    "GitHub",
+    "CI/CD",
+    "Kubernetes",
   ],
   worksFor: {
     type: "Organization",
@@ -119,8 +122,11 @@ export function buildRootJsonLd() {
           "Bittensor",
           "Subnet 42",
           "distributed systems",
-          "AI trading systems",
-          "agentic backends",
+          "AI systems",
+          "operator software",
+          "GitHub",
+          "CI/CD",
+          "Kubernetes",
         ],
         worksFor: {
           "@type": "Organization",
@@ -197,7 +203,7 @@ export function buildProjectsPageJsonLd() {
         url,
         name: "Grant Foster projects",
         description:
-          "Project directory for Grant Foster, including Subnet Signal, Thread Pilot, Invoice Pilot, and Cycler.",
+          "Project directory for Grant Foster, including Subnet Signal, Thread Pilot, Invoice Pilot, and related operator software.",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": `${SITE_URL}/#person` },
         inLanguage: "en-US",

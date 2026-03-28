@@ -90,13 +90,13 @@ export function Hero() {
               </p>
               <ul className="mt-5 grid grid-cols-1 gap-2 text-sm font-medium text-zinc-800 sm:grid-cols-3">
                 <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  Subnet 42 operator
+                  Bittensor + distributed systems
                 </li>
                 <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  Founder of Subnet Signal
+                  AI + operator software
                 </li>
                 <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
-                  AI + infra shipped weekly
+                  End-to-end execution, shipped in public
                 </li>
               </ul>
             </div>

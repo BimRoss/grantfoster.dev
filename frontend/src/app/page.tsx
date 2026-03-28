@@ -13,7 +13,7 @@ export default function Home() {
               Start here
             </h2>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-700 md:text-lg">
-              Three links to understand what I am building and follow it in real time.
+              Three places to see the proof: build logs, breakdowns, and the flagship product.
             </p>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               <a
@@ -24,7 +24,7 @@ export default function Home() {
               >
                 <p className="font-semibold text-zinc-950">Daily build posts on X</p>
                 <p className="mt-1 text-sm leading-relaxed text-zinc-700">
-                  Short updates, lessons, and what shipped this week.
+                  Short execution logs, lessons, and what actually shipped.
                 </p>
               </a>
               <a
@@ -35,7 +35,7 @@ export default function Home() {
               >
                 <p className="font-semibold text-zinc-950">Long-form breakdowns</p>
                 <p className="mt-1 text-sm leading-relaxed text-zinc-700">
-                  Walkthroughs on infra, automation, and operating systems.
+                  Walkthroughs on AI systems, infrastructure, and operator leverage.
                 </p>
               </a>
               <a
@@ -46,7 +46,7 @@ export default function Home() {
               >
                 <p className="font-semibold text-zinc-950">Flagship product: Subnet Signal</p>
                 <p className="mt-1 text-sm leading-relaxed text-zinc-700">
-                  Bittensor tools and signals for operators and builders.
+                  Bittensor tooling for operators who want signal, not noise.
                 </p>
               </a>
             </div>
