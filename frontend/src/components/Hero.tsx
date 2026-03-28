@@ -63,7 +63,7 @@ export function Hero() {
               }}
             >
               <p className="border-l-2 border-black/40 pl-4 font-mono text-[10px] font-medium leading-relaxed tracking-[0.2em] text-zinc-800 sm:text-xs sm:tracking-[0.18em]">
-                serial creator, good enough DJ
+                build in public, ship with proof
               </p>
               <h1
                 id="hero-heading"
@@ -88,6 +88,17 @@ export function Hero() {
               <p className="mt-6 font-sans text-base leading-relaxed text-zinc-900 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
                 {siteDescription}
               </p>
+              <ul className="mt-5 grid grid-cols-1 gap-2 text-sm font-medium text-zinc-800 sm:grid-cols-3">
+                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
+                  Subnet 42 operator
+                </li>
+                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
+                  Founder of Subnet Signal
+                </li>
+                <li className="rounded border border-black/10 bg-white/65 px-3 py-2">
+                  AI + infra shipped weekly
+                </li>
+              </ul>
             </div>
 
             <nav
