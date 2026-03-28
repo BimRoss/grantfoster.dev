@@ -48,7 +48,7 @@ export function Hero() {
         <div className="pointer-events-none relative z-10 mx-auto flex min-h-0 w-full max-w-6xl flex-1 flex-col md:block md:flex-none">
           <div className="hero-reveal flex min-h-0 flex-1 flex-col gap-6 md:h-auto md:flex-none md:flex-row md:items-center md:justify-between md:gap-12 md:gap-y-8 lg:gap-16">
             <div
-              className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left max-md:cursor-pointer max-md:active:opacity-[0.92] max-md:transition-opacity md:min-h-[16rem] lg:max-w-3xl lg:min-h-[17rem]"
+              className="pointer-events-auto min-w-0 max-w-2xl shrink-0 text-left max-md:cursor-pointer max-md:active:opacity-[0.92] max-md:transition-opacity md:flex md:min-h-[16rem] md:flex-col md:justify-center lg:max-w-3xl lg:min-h-[17rem]"
               onClick={(e) => {
                 if (
                   typeof window !== "undefined" &&
@@ -63,7 +63,7 @@ export function Hero() {
               }}
             >
               <p className="border-l-2 border-black/40 pl-4 font-mono text-[10px] font-medium leading-relaxed tracking-[0.2em] text-zinc-800 sm:text-xs sm:tracking-[0.18em]">
-                build in public, ship with proof
+                serial creator, good enough DJ
               </p>
               <h1
                 id="hero-heading"

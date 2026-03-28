@@ -4,6 +4,8 @@ export const SITE_URL = "https://grantfoster.dev";
 export const SITE_NAME = "Grant Foster";
 export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
 export const OG_IMAGE_PATH = "/opengraph-image";
+export const BIMROSS_DESCRIPTION =
+  "BimRoss is a single-person LLC focused on building distributed infrastructure, agentic-powered backend systems, and self-improving UI's. We focus on Bittensor infrastructure, AI products, and operator tooling for teams that need secure execution, reliable operations, and incentive alignment.";
 
 export const siteDescription =
   "Bittensor miner & operator, specialized in agentic-powered backends and distributed infrastructure. I develop AI trading systems, self-improving UI's, and the experiments in between.";
@@ -43,7 +45,7 @@ export const projects = [
   {
     name: "BimRoss",
     url: "https://bimross.com",
-    description: "Primary company site and infrastructure operator profile.",
+    description: BIMROSS_DESCRIPTION,
   },
 ];
 
@@ -69,6 +71,7 @@ export const siteProfile = {
     type: "Organization",
     name: "BimRoss",
     url: "https://bimross.com",
+    description: BIMROSS_DESCRIPTION,
   },
   projects: projects.map((p) => ({
     name: p.name,
@@ -126,6 +129,7 @@ export function buildRootJsonLd() {
           "@type": "Organization",
           name: "BimRoss",
           url: "https://bimross.com",
+          description: BIMROSS_DESCRIPTION,
         },
       },
       {
