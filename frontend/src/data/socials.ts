@@ -2,6 +2,7 @@ import type { ReactElement, SVGProps } from "react";
 import {
   DiscordIcon,
   EmailIcon,
+  GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   PhoneIcon,
@@ -18,6 +19,7 @@ export type SocialEntry =
   | { label: string; action: "call"; icon: SocialIcon };
 
 export const socials: SocialEntry[] = [
+  { label: "GitHub", href: "https://github.com/geeeeemoney", icon: GitHubIcon },
   { label: "X", href: "https://twitter.com/geeeeeeemoney", icon: TwitterXIcon },
   { label: "Telegram", href: "https://t.me/geeeemoney", icon: TelegramIcon },
   {
@@ -38,7 +40,7 @@ export const socials: SocialEntry[] = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/grantdavisfoster/",
+    href: "https://www.instagram.com/geeeeeeeeemoney/",
     icon: InstagramIcon,
   },
   {

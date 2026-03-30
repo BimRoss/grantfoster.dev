@@ -4,10 +4,22 @@ import { StickySocialBar } from "@/components/StickySocialBar";
 
 export default function Home() {
   return (
-    <>
-      <main id="main-content" className="flex min-h-0 flex-1 flex-col overflow-hidden bg-white">
-        <Hero />
-        <section className="hidden border-t border-black/10 px-6 py-12 md:block md:px-10 md:py-16" aria-labelledby="start-here">
+    <div className="flex min-h-full flex-1 flex-col md:min-h-0">
+      <main
+        id="main-content"
+        className="flex w-full flex-1 flex-col max-md:bg-transparent md:bg-white md:min-h-0 md:overflow-hidden"
+      >
+        {/* Desktop: fills viewport minus footer and vertically centers hero. Mobile: flex spacer below hero shows fixed network backdrop; footer stays at bottom of screen. */}
+        <div className="flex flex-1 flex-col max-md:min-h-0">
+          <div className="flex flex-col max-md:justify-start md:min-h-0 md:flex-1 md:justify-center">
+            <Hero />
+          </div>
+          <div
+            className="pointer-events-none max-md:min-h-[2rem] max-md:flex-1 max-md:shrink-0"
+            aria-hidden
+          />
+        </div>
+        <section className="hidden border-t border-black/10 px-6 py-12 md:px-10 md:py-16" aria-labelledby="start-here">
           <div className="mx-auto max-w-6xl">
             <h2 id="start-here" className="font-display text-2xl tracking-tight text-zinc-950 md:text-3xl">
               Start here
@@ -53,10 +65,13 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="relative z-20 flex shrink-0 flex-col" role="contentinfo">
+      <footer
+        className="relative z-20 mt-auto flex w-full shrink-0 flex-col max-md:pb-[env(safe-area-inset-bottom,0px)]"
+        role="contentinfo"
+      >
         <StickySocialBar />
         <SiteFooter />
       </footer>
-    </>
+    </div>
   );
 }

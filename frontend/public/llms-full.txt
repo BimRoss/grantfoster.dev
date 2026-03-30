@@ -16,6 +16,7 @@ Grant Foster is an AI staff engineer focused on applied AI systems, distributed 
 - Projects JSON: https://grantfoster.dev/projects.json
 - Company: https://bimross.com
 - Subnet Signal: https://subnetsignal.com
+- X Agent (Subnet Signal on X): https://x.com/subnet_signal
 - Thread Pilot & Joanne: https://grantfoster.dev (coming soon)
 - Invoice Pilot: https://getinvoicepilot.com
 - Cycler: https://cycler.io

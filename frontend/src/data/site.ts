@@ -2,13 +2,13 @@ import { socials } from "./socials";
 
 export const SITE_URL = "https://grantfoster.dev";
 export const SITE_NAME = "Grant Foster";
-export const SITE_TITLE = "Grant Foster | AI Staff Engineer";
+export const SITE_TITLE = "Grant Foster | Serial Creator";
 export const OG_IMAGE_PATH = "/opengraph-image";
 export const BIMROSS_DESCRIPTION =
   "BimRoss is a single-person LLC focused on building distributed infrastructure, agentic-powered backend systems, and self-improving UI's. We focus on Bittensor infrastructure, AI products, and operator tooling for teams that need secure execution, reliable operations, and incentive alignment.";
 
 export const siteDescription =
-  "Bittensor miner & operator, specialized in agentic-powered backends and distributed infrastructure. I develop AI trading systems, self-improving UI's, and the experiments in between.";
+  "I am on a mission to build the world's first trillion-dollar, single-person LLC. With a focus on Bittensor as a miner & operator, I specialize in agentic-powered backends and distributed infrastructure.  I develop AI trading systems, self-improving UI's, and the experiments in between.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],

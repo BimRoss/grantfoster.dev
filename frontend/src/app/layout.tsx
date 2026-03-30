@@ -115,7 +115,7 @@ export default function RootLayout({
         </a>
         <JsonLd data={rootJsonLd} />
         <ToastProvider>
-          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-hidden md:overflow-x-hidden md:overflow-y-auto">
+          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-x-hidden overflow-y-auto">
             {children}
           </div>
         </ToastProvider>

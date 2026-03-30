@@ -15,16 +15,19 @@
 ## Identity
 - Name: Grant Foster
 - Role: AI Staff Engineer
+- Mission: I am on a mission to build the world's first trillion-dollar, single-person LLC. With a focus on Bittensor as a miner & operator, I specialize in agentic-powered backends and distributed infrastructure.  I develop AI trading systems, self-improving UI's, and the experiments in between.
 - Domain: grantfoster.dev
 - Company: https://bimross.com
 
 ## Focus
+- Trillion-dollar single-person LLC (mission)
 - Bittensor mining and operations
 - Agentic backends and distributed infrastructure
 - AI trading systems and product experimentation
 
 ## Related Properties
 - https://subnetsignal.com
+- https://x.com/subnet_signal (X Agent / Subnet Signal)
 - https://grantfoster.dev (Thread Pilot & Joanne — coming soon)
 - https://getinvoicepilot.com
 - https://cycler.io

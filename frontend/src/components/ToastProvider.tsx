@@ -18,7 +18,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     <ToastContext.Provider value={{ showToast }}>
       {children}
       <Toaster
-        className="bim-sonner"
+        className="bim-sonner bim-sonner--light"
         theme="light"
         position="top-center"
         expand
