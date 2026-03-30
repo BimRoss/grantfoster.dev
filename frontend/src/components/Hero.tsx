@@ -62,7 +62,7 @@ export function Hero() {
               </p>
               <h1
                 id="hero-heading"
-                className="font-display mt-3 flex flex-row flex-wrap items-end gap-x-2 gap-y-1 sm:mt-7 sm:flex-nowrap sm:gap-x-3 md:gap-x-4"
+                className="font-display mt-3 flex flex-row flex-wrap items-end gap-x-0 gap-y-1 sm:mt-7 sm:flex-nowrap"
               >
                 <span className="sr-only">Grant Foster</span>
                 <Image
@@ -74,7 +74,7 @@ export function Hero() {
                   className="h-20 w-auto shrink-0 brightness-0 sm:h-24 md:h-28 lg:h-32"
                 />
                 <span
-                  className="font-display text-5xl font-semibold leading-[0.95] tracking-tight text-black md:text-7xl lg:text-8xl"
+                  className="-ml-1 font-display text-5xl font-semibold leading-[0.95] tracking-tight text-black sm:-ml-1.5 md:-ml-1 lg:-ml-1 md:text-7xl lg:text-8xl"
                   aria-hidden
                 >
                   rantFoster
