@@ -15,7 +15,7 @@
 ## Identity
 - Name: Grant Foster
 - Role: AI Staff Engineer
-- Mission: Building the world's first trillion-dollar company with one human. Founder of BimRoss, LLC and makeacompany.ai. Everything I do is built on Bittensor, with a focus on agentic-powered backends and distributed infrastructure.
+- Mission: Building the world's first trillion-dollar company with one human. Everything I do is built on Bittensor, with a focus on agentic-powered backends and distributed infrastructure.
 - Domain: grantfoster.dev
 - Company: https://bimross.com
 - Product: https://makeacompany.ai

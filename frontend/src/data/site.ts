@@ -8,7 +8,7 @@ export const BIMROSS_DESCRIPTION =
   "BimRoss is a single-person LLC focused on building distributed infrastructure, agentic-powered backend systems, and self-improving UI's. We focus on Bittensor infrastructure, AI products, and operator tooling for teams that need secure execution, reliable operations, and incentive alignment.";
 
 export const siteDescription =
-  "Building the world's first trillion-dollar company with one human. Founder of BimRoss, LLC and makeacompany.ai. Everything I do is built on Bittensor, with a focus on agentic-powered backends and distributed infrastructure.";
+  "Building the world's first trillion-dollar company with one human. Everything I do is built on Bittensor, with a focus on agentic-powered backends and distributed infrastructure.";
 
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
