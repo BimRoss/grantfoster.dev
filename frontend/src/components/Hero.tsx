@@ -9,8 +9,6 @@ import NetworkBackdrop, {
 import { productCTAs } from "@/data/products";
 import { siteDescription } from "@/data/site";
 
-import { useSiteToast } from "./ToastProvider";
-
 /** Sharp rectangles — light frosted glass (translucent + blur), matches BimRoss shape system */
 function productCtaClassName() {
   return [
@@ -23,13 +21,12 @@ function productCtaClassName() {
 }
 
 export function Hero() {
-  const { showToast } = useSiteToast();
   const networkRef = useRef<NetworkBackdropHandle>(null);
 
   return (
     <>
       <section
-        className="relative w-full shrink-0 overflow-x-hidden overflow-y-visible bg-white px-5 pt-2.5 pb-6 md:px-10 md:py-8"
+        className="relative w-full shrink-0 overflow-x-hidden overflow-y-visible bg-white px-5 pt-8 pb-6 md:px-10 md:py-8"
         aria-labelledby="hero-heading"
       >
         <div className="fixed inset-0 z-0">
@@ -90,20 +87,6 @@ export function Hero() {
               className="products-scroll products-reveal pointer-events-auto flex w-full flex-col gap-3 pb-1 sm:max-w-md md:h-auto md:w-auto md:shrink-0 md:items-end md:gap-5 md:pb-0"
             >
               {productCTAs.map((cta) => {
-                if (cta.kind === "toast") {
-                  const ctaClass = productCtaClassName();
-                  return (
-                    <div key={cta.label} className="product-cta-shell">
-                      <button
-                        type="button"
-                        onClick={() => showToast(cta.message)}
-                        className={ctaClass}
-                      >
-                        {cta.label}
-                      </button>
-                    </div>
-                  );
-                }
                 const ctaClass = productCtaClassName();
                 return (
                   <div key={cta.href} className="product-cta-shell">
