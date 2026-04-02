@@ -25,9 +25,9 @@ export default function Home() {
               Start here
             </h2>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-zinc-700 md:text-lg">
-              Three places to see the proof: build logs, breakdowns, and the flagship product.
+              Two places to see the proof: build logs and long-form breakdowns.
             </p>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
               <a
                 href="https://x.com/geeeeeeemoney"
                 target="_blank"
@@ -48,17 +48,6 @@ export default function Home() {
                 <p className="font-semibold text-zinc-950">Long-form breakdowns</p>
                 <p className="mt-1 text-sm leading-relaxed text-zinc-700">
                   Walkthroughs on AI systems, infrastructure, and operator leverage.
-                </p>
-              </a>
-              <a
-                href="https://subnetsignal.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg border border-black/10 p-4 transition hover:border-black/25"
-              >
-                <p className="font-semibold text-zinc-950">Flagship product: Subnet Signal</p>
-                <p className="mt-1 text-sm leading-relaxed text-zinc-700">
-                  Bittensor tooling for operators who want signal, not noise.
                 </p>
               </a>
             </div>
