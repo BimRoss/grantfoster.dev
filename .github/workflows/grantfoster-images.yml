@@ -16,11 +16,13 @@ on:
 jobs:
   frontend:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       IMAGE_NAME: geeemoney/grantfoster-website
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Default docker-container driver: required for cache-from/cache-to type=gha
       # (the docker driver cannot export GHA cache). Tradeoff: pulls moby/buildkit
@@ -30,14 +32,14 @@ jobs:
 
       - name: Login to Docker Hub
         if: startsWith(github.ref, 'refs/tags/')
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Extract metadata (tags, labels)
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: ${{ env.IMAGE_NAME }}
           tags: |
@@ -46,8 +48,18 @@ jobs:
             type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/v') }}
             type=raw,value=build,enable=${{ !startsWith(github.ref, 'refs/tags/') }}
 
+      - name: Validate GA measurement ID for tagged releases
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ vars.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
+        run: |
+          if [ -z "${NEXT_PUBLIC_GA_MEASUREMENT_ID}" ]; then
+            echo "NEXT_PUBLIC_GA_MEASUREMENT_ID repository variable is required for tagged builds."
+            exit 1
+          fi
+
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: deploy/docker/frontend.Dockerfile
@@ -77,7 +89,7 @@ jobs:
           echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
 
       - name: Checkout rancher-admin
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: ${{ env.RANCHER_ADMIN_REPO }}
           ref: master

@@ -35,6 +35,22 @@ Repository variable:
 |----------|-------|
 | `NEXT_PUBLIC_GA_MEASUREMENT_ID` | `G-YSH2D4182J` |
 
+### GA setup contract
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` must exist as a GitHub **repository variable**.
+- The frontend Docker image bakes `NEXT_PUBLIC_*` values at `npm run build` time. If GA changes, ship a new tagged image (`v*`) so GitOps rolls a rebuilt frontend.
+- Tagged releases fail fast if the GA variable is missing.
+
+Verify what users are actually getting:
+
+```bash
+python - <<'PY'
+import urllib.request
+html = urllib.request.urlopen('https://grantfoster.dev', timeout=15).read().decode('utf-8', 'ignore')
+print('googletagmanager.com/gtag/js?id=G-YSH2D4182J' in html)
+PY
+```
+
 ### Release
 
 1. Commit and push to `main` / `master`.
