@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --color-bg-deep: #ffffff;
   --color-fg: #111111;
@@ -26,6 +28,12 @@ html {
   color-scheme: light;
 }
 
+html.dark {
+  background-color: #09090b;
+  color: #f4f4f5;
+  color-scheme: dark;
+}
+
 body {
   background-color: #ffffff;
   background: var(--color-bg-deep);
@@ -36,8 +44,24 @@ body {
   color-scheme: light;
 }
 
+html.dark body {
+  background-color: #09090b;
+  background: #09090b;
+  color: #a1a1aa;
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
+}
+
+/* Theme fade */
+html {
+  transition: background-color 500ms ease, color 500ms ease;
+}
+
+html * {
+  transition: background-color 500ms ease, color 500ms ease, border-color 500ms ease, fill 500ms ease, stroke 500ms ease;
 }
 
 @media (min-width: 768px) {
@@ -70,11 +94,7 @@ body::after {
   height: 100dvh;
   width: 100%;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(0, 0, 0, 0.05), transparent 42%),
-    radial-gradient(circle at 88% 12%, rgba(0, 0, 0, 0.035), transparent 48%),
-    radial-gradient(circle at 52% 88%, rgba(0, 0, 0, 0.03), transparent 45%),
-    #ffffff;
+  background: #ffffff;
 }
 
 .network-backdrop::before {
@@ -82,10 +102,8 @@ body::after {
   position: absolute;
   inset: -12%;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(0, 0, 0, 0.06), transparent 34%),
-    radial-gradient(circle at 62% 58%, rgba(0, 0, 0, 0.035), transparent 42%);
-  opacity: 0.42;
+  background: transparent;
+  opacity: 0;
 }
 
 .network-bg {
@@ -787,5 +805,56 @@ body::after {
 
   .product-cta-shell > .product-cta {
     width: auto;
+  }
+}
+
+@media print {
+  html,
+  body {
+    overflow: visible !important;
+    height: auto !important;
+    background: #fff !important;
+    color: #111 !important;
+    color-scheme: light !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Neutralise dark-mode backgrounds and text — let layout/spacing be unaffected */
+  html.dark main,
+  html.dark section,
+  html.dark header,
+  html.dark div,
+  html.dark p,
+  html.dark span,
+  html.dark h1,
+  html.dark h2,
+  html.dark h3,
+  html.dark li,
+  html.dark dt,
+  html.dark dd,
+  html.dark a {
+    background-color: transparent !important;
+    color: #111 !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Hide the network backdrop entirely when printing */
+  .network-backdrop,
+  .network-backdrop::before,
+  .network-backdrop::after {
+    display: none !important;
+  }
+
+  /* Suppress the film grain overlay */
+  body::after {
+    display: none !important;
+  }
+
+  @page {
+    margin: 0.6in 0.7in;
+    size: letter;
   }
 }
