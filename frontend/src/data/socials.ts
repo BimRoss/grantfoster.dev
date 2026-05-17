@@ -20,28 +20,10 @@ export type SocialEntry =
 
 export const socials: SocialEntry[] = [
   { label: "GitHub", href: "https://github.com/geeeeemoney", icon: GitHubIcon },
-  { label: "X", href: "https://twitter.com/geeeeeeemoney", icon: TwitterXIcon },
-  { label: "Telegram", href: "https://t.me/geeeemoney", icon: TelegramIcon },
-  {
-    label: "Discord",
-    href: "https://discordapp.com/users/449222160687300608",
-    icon: DiscordIcon,
-  },
-  { label: "YouTube", href: "https://www.youtube.com/@geeeeemoney", icon: YouTubeIcon },
-  {
-    label: "SoundCloud",
-    href: "https://on.soundcloud.com/lTt69LlmWrZRAkqvH9",
-    icon: SoundCloudIcon,
-  },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/grantdfoster/",
     icon: LinkedInIcon,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com/geeeeeeeeemoney/",
-    icon: InstagramIcon,
   },
   {
     label: "Email",
@@ -49,7 +31,7 @@ export const socials: SocialEntry[] = [
     icon: EmailIcon,
   },
   {
-    label: "Call us",
+    label: "Call",
     action: "call",
     icon: PhoneIcon,
   },

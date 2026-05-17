@@ -6,6 +6,7 @@ const ALLOWED = new Set([
   "/",
   "/about",
   "/projects",
+  "/resume",
   "/profile.json",
   "/projects.json",
   "/robots.txt",
