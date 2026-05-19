@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 
+import { RefreshableBullets } from "@/components/resume/RefreshableBullets";
+import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
+import { EmailIcon, GitHubIcon, LinkedInIcon, PhoneIcon } from "@/data/socialIcons";
 
 export const metadata: Metadata = {
   title: "Resume — Grant Foster",
@@ -124,19 +127,33 @@ export default function ResumePage() {
           <p className="mt-2 font-mono text-sm text-zinc-500 dark:text-zinc-400 print:mt-1 print:text-xs">
             Staff Product Engineer — TypeScript · Python · Go · React · Docker · Kubernetes
           </p>
-          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-mono text-xs text-zinc-600 print:mt-2 print:gap-x-4">
-            <a href="https://linkedin.com/in/grantdfoster" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-zinc-950">linkedin.com/in/grantdfoster</a>
-            <a href="https://github.com/geeeeemoney" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-zinc-950">github.com/geeeeemoney</a>
-            <a href="mailto:grantdfoster@gmail.com" className="transition-colors hover:text-zinc-950">grantdfoster@gmail.com</a>
-            <a href="tel:+13144025801" className="transition-colors hover:text-zinc-950">(314) 402-5801</a>
+          <div className="mt-4 flex flex-wrap gap-2 print:gap-x-5 print:gap-y-0.5">
+            {[
+              { href: "https://linkedin.com/in/grantdfoster", Icon: LinkedInIcon, label: "linkedin.com/in/grantdfoster", external: true },
+              { href: "https://github.com/geeeeemoney", Icon: GitHubIcon, label: "github.com/geeeeemoney", external: true },
+              { href: "mailto:grantdfoster@gmail.com", Icon: EmailIcon, label: "grantdfoster@gmail.com", external: false },
+              { href: "tel:+13144025801", Icon: PhoneIcon, label: "(314) 402-5801", external: false },
+            ].map(({ href, Icon, label, external }) => (
+              <a
+                key={href}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="inline-flex items-center gap-1.5 rounded-full border border-black/15 px-3 py-1.5 font-mono text-xs text-zinc-600 transition-colors hover:border-black/30 hover:text-zinc-950 dark:border-white/15 dark:text-zinc-400 dark:hover:border-white/30 dark:hover:text-white print:rounded-none print:border-0 print:p-0 print:text-zinc-600"
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 print:hidden" />
+                {label}
+              </a>
+            ))}
           </div>
         </header>
 
         {/* Summary */}
         <section className="mt-8 print:mt-4">
-          <p className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg print:text-sm print:leading-snug">
-            Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and owning the stack from product design to observable infrastructure. I&apos;ve spent years integrating software with the real world: generating building geometry, integrating live sensor feeds, and operating in markets that punish latency. My recent work focuses on applied AI and deploying reliable, agentic systems at scale. I close the gap between what engineers build and the customers who use it with real world validation.
-          </p>
+          <RefreshableParagraph
+            original="Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and owning the stack from product design to observable infrastructure. I've spent years integrating software with the real world: generating building geometry, integrating live sensor feeds, and operating in markets that punish latency. My recent work focuses on applied AI and deploying reliable, agentic systems at scale. I close the gap between what engineers build and the customers who use it with real world validation."
+            section="professional summary"
+            className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg print:text-sm print:leading-snug"
+          />
         </section>
 
         {/* Core Competencies */}
@@ -168,13 +185,7 @@ export default function ResumePage() {
                   </div>
                   <span className="font-mono text-xs text-zinc-400 sm:shrink-0 sm:text-right">{job.location} · {job.period}</span>
                 </div>
-                <ul className="mt-3 space-y-2 pl-4 print:mt-1.5 print:space-y-1">
-                  {job.bullets.map((b, i) => (
-                    <li key={i} className="relative text-[15px] leading-relaxed text-zinc-700 before:absolute before:-left-4 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-zinc-400 before:content-[''] dark:text-zinc-300 dark:before:bg-zinc-600 print:before:bg-zinc-500 print:text-xs print:leading-snug">
-                      {b}
-                    </li>
-                  ))}
-                </ul>
+                <RefreshableBullets original={job.bullets} company={job.company} />
               </div>
             ))}
           </div>
@@ -185,13 +196,27 @@ export default function ResumePage() {
           <h2 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Technical Skills
           </h2>
-          <dl className="mt-4 space-y-2 print:mt-2 print:space-y-1">
-            {skills.map((s) => (
-              <div key={s.area} className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-2">
-                <dt className="sm:w-44 sm:shrink-0 font-mono text-xs font-semibold text-zinc-500 dark:text-zinc-400">{s.area}</dt>
-                <dd className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 print:text-xs print:leading-snug">{s.detail}</dd>
-              </div>
-            ))}
+          <dl className="mt-4 space-y-4 print:mt-2 print:space-y-2">
+            {skills.map((s) => {
+              const tags = s.detail.split(/\s*[·,]\s*/).map((t) => t.trim()).filter(Boolean);
+              return (
+                <div key={s.area}>
+                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-500 print:inline print:text-[10px]">
+                    {s.area}
+                  </dt>
+                  <dd className="mt-2 flex flex-wrap gap-1.5 print:mt-0.5 print:gap-x-3 print:gap-y-0.5">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded border border-black/10 bg-zinc-50 px-2 py-0.5 font-mono text-xs text-zinc-700 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-300 print:border-0 print:bg-transparent print:px-0 print:py-0 print:text-xs print:text-zinc-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              );
+            })}
           </dl>
         </section>
 
