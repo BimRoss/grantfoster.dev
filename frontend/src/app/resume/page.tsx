@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { RefreshableBullets } from "@/components/resume/RefreshableBullets";
+import { ExperienceEntry } from "@/components/resume/ExperienceEntry";
 import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
 import { EmailIcon, GitHubIcon, LinkedInIcon, PhoneIcon } from "@/data/socialIcons";
 
@@ -120,7 +120,7 @@ export default function ResumePage() {
         {/* Nav row — hidden on print */}
 
         {/* Header */}
-        <header className="border-b border-black/10 pb-8 dark:border-white/10 print:pb-3">
+        <header className="pb-4 print:pb-2">
           <h1 className="font-display text-4xl font-semibold tracking-tight text-zinc-950 dark:text-white md:text-5xl print:text-3xl">
             Grant Foster
           </h1>
@@ -148,7 +148,7 @@ export default function ResumePage() {
         </header>
 
         {/* Summary */}
-        <section className="mt-8 print:mt-4">
+        <section className="mt-4 print:mt-2">
           <RefreshableParagraph
             original="Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and owning the stack from product design to observable infrastructure. I've spent years integrating software with the real world: generating building geometry, integrating live sensor feeds, and operating in markets that punish latency. My recent work focuses on applied AI and deploying reliable, agentic systems at scale. I close the gap between what engineers build and the customers who use it with real world validation."
             section="professional summary"
@@ -177,47 +177,30 @@ export default function ResumePage() {
           </h2>
           <div className="mt-6 space-y-10 print:mt-3 print:space-y-5">
             {experience.map((job) => (
-              <div key={job.company}>
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
-                  <div className="min-w-0">
-                    <span className="font-display text-lg font-semibold text-zinc-950 dark:text-white print:text-base">{job.company}</span>
-                    <span className="ml-2 text-base text-zinc-600 dark:text-zinc-400 print:text-sm">— {job.title}</span>
-                  </div>
-                  <span className="font-mono text-xs text-zinc-400 sm:shrink-0 sm:text-right">{job.location} · {job.period}</span>
-                </div>
-                <RefreshableBullets original={job.bullets} company={job.company} />
-              </div>
+              <ExperienceEntry key={job.company} job={job} />
             ))}
           </div>
         </section>
 
         {/* Skills */}
-        <section className="mt-10 border-t border-black/10 pt-8 dark:border-white/10 print:mt-5 print:pt-4">
+        <section className="mt-10 print:mt-5">
           <h2 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-400">
             Technical Skills
           </h2>
-          <dl className="mt-4 space-y-4 print:mt-2 print:space-y-2">
-            {skills.map((s) => {
-              const tags = s.detail.split(/\s*[·,]\s*/).map((t) => t.trim()).filter(Boolean);
-              return (
-                <div key={s.area}>
-                  <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-500 print:inline print:text-[10px]">
-                    {s.area}
-                  </dt>
-                  <dd className="mt-2 flex flex-wrap gap-1.5 print:mt-0.5 print:gap-x-3 print:gap-y-0.5">
-                    {tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded border border-black/10 bg-zinc-50 px-2 py-0.5 font-mono text-xs text-zinc-700 dark:border-white/10 dark:bg-zinc-900 dark:text-zinc-300 print:border-0 print:bg-transparent print:px-0 print:py-0 print:text-xs print:text-zinc-600"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </dd>
-                </div>
-              );
-            })}
-          </dl>
+          <table className="mt-4 w-full border-collapse print:mt-2">
+            <tbody>
+              {skills.map((s) => (
+                  <tr key={s.area} className="border-t border-black/6 dark:border-white/6 print:border-black/10">
+                    <td className="w-36 py-2.5 pr-5 align-top text-sm font-semibold text-zinc-700 dark:text-zinc-300 print:py-1.5 print:pr-4 print:text-xs">
+                      {s.area}
+                    </td>
+                    <td className="py-2.5 align-top text-sm text-zinc-700 dark:text-zinc-300 print:py-1.5 print:text-xs">
+                      {s.detail}
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </section>
 
         {/* Education */}

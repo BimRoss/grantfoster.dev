@@ -26,7 +26,7 @@ function normalizePathname(pathname: string): string {
 export function proxy(request: NextRequest) {
   const pathname = normalizePathname(request.nextUrl.pathname);
 
-  if (pathname.startsWith("/.well-known/")) {
+  if (pathname.startsWith("/.well-known/") || pathname.startsWith("/api/")) {
     return NextResponse.next();
   }
 

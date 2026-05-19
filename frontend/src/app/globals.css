@@ -808,6 +808,25 @@ body::after {
   }
 }
 
+/* AI rewrite — cursor blink + sparkle spin */
+@keyframes ai-cursor-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes ai-sparkle-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.ai-cursor {
+  display: inline-block;
+  margin-left: 1px;
+  vertical-align: baseline;
+  line-height: 1;
+  animation: ai-cursor-blink 0.85s step-end infinite;
+}
+
 @media print {
   html,
   body {
