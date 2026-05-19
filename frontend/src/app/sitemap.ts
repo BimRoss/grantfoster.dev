@@ -8,8 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const paths = [
     "/",
-    "/about",
-    "/projects",
+    "/resume",
     "/profile.json",
     "/projects.json",
   ];

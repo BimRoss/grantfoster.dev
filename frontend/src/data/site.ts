@@ -14,18 +14,17 @@ const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
 );
 
-/** Public project directory — /projects, JSON-LD ItemList, /projects.json */
+/** Public project directory — JSON-LD ItemList, /projects.json */
 export const projects = [
   {
     name: "Subnet Signal",
     url: "https://subnetsignal.com",
-    description: "Bittensor tools and signals for operators and builders.",
+    description: "D3-based Bittensor news aggregator with an agentic backend — subnet alpha and sentiment signals in one place.",
   },
   {
-    name: "Thread Pilot",
-    url: SITE_URL,
-    description:
-      "AI-assisted drafting for threads and long-form social workflows (coming soon).",
+    name: "MakeACompany",
+    url: "https://makeacompany.ai",
+    description: "Slack-native product for spinning up AI-native teams with durable conversation context and backend orchestration.",
   },
   {
     name: "Invoice Pilot",
@@ -35,12 +34,7 @@ export const projects = [
   {
     name: "Cycler",
     url: "https://cycler.io",
-    description: "Product experiments and iterative automation tooling.",
-  },
-  {
-    name: "Joanne",
-    url: SITE_URL,
-    description: "Resume and job-search workflows (coming soon).",
+    description: "Web, iOS, and Android app for fitness instructors — harmonic, tempo-driven playlists in seconds.",
   },
   {
     name: "BimRoss",
@@ -163,72 +157,3 @@ export function buildRootJsonLd() {
   };
 }
 
-export function buildAboutPageJsonLd() {
-  const url = `${SITE_URL}/about`;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        url,
-        name: "About Grant Foster",
-        description: `About Grant Foster: ${siteDescription}`,
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#person` },
-        inLanguage: "en-US",
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${url}#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "About", item: url },
-        ],
-      },
-    ],
-  };
-}
-
-export function buildProjectsPageJsonLd() {
-  const url = `${SITE_URL}/projects`;
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        url,
-        name: "Grant Foster projects",
-        description:
-          "Project directory for Grant Foster, including Subnet Signal, Thread Pilot, Invoice Pilot, and Cycler.",
-        isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#person` },
-        inLanguage: "en-US",
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${url}#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Projects", item: url },
-        ],
-      },
-      {
-        "@type": "ItemList",
-        "@id": `${url}#list`,
-        itemListElement: projects.map((p, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: p.name,
-          item: {
-            "@type": "WebApplication",
-            name: p.name,
-            url: p.url,
-            description: p.description,
-          },
-        })),
-      },
-    ],
-  };
-}

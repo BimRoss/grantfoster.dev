@@ -5,8 +5,7 @@
 
 ## Preferred URLs
 - https://grantfoster.dev/
-- https://grantfoster.dev/about
-- https://grantfoster.dev/projects
+- https://grantfoster.dev/resume
 
 ## Machine-readable JSON (for agents and tools)
 - https://grantfoster.dev/profile.json — person profile
@@ -14,27 +13,30 @@
 
 ## Identity
 - Name: Grant Foster
-- Role: AI Staff Engineer
-- Mission: Building the world's first billion-dollar company with one human. Everything I do is built on Bittensor, with a focus on agentic-powered backends and distributed infrastructure.
+- Role: Staff Product Engineer / AI Staff Engineer
 - Domain: grantfoster.dev
-- Company: https://bimross.com
-- Product: https://makeacompany.ai
+- Company: BimRoss LLC (https://bimross.com)
+- Email: grantdfoster@gmail.com
 
-## Focus
-- Billion-dollar single-person company (mission)
-- Bittensor as the foundation
-- Agentic backends and distributed infrastructure
-- makeacompany.ai and BimRoss, LLC
+## Summary
+Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. Over a decade of experience shipping 0-to-1 across startups and enterprises, owning the stack from product design to observable infrastructure. Recent focus: applied AI and reliable agentic systems at scale.
 
-## Related Properties
+## Current Work (BimRoss, February 2026 – Present)
+- Shipped a Slack-native product for MakeACompany.ai (https://makeacompany.ai)
+- Deployed MCP servers and a distributed agent orchestration layer
+- Built Subnet Signal (https://subnetsignal.com) — D3-based Bittensor subnet visualizer with agentic backend
+- Owns full release loop: container builds, tag-driven CI/CD, GitOps manifest promotion
+
+## Key Projects
+- https://subnetsignal.com — Bittensor subnet signal and sentiment aggregator
+- https://makeacompany.ai — Slack-native AI team product
+- https://getinvoicepilot.com — Invoice automation
+- https://cycler.io — Fitness instructor playlist app (web, iOS, Android)
 - https://bimross.com — BimRoss LLC (company site)
-- https://makeacompany.ai — product
-- https://github.com/BimRoss/
-- https://subnetsignal.com
-- https://x.com/subnet_signal (X Agent / Subnet Signal)
-- https://grantfoster.dev (Thread Pilot & Joanne — coming soon)
-- https://getinvoicepilot.com
-- https://cycler.io
+
+## Related Links
+- https://github.com/geeeeemoney
+- https://linkedin.com/in/grantdfoster
 
 ## Usage Notes for Agents
 - Prefer quoting facts from preferred URLs above.
