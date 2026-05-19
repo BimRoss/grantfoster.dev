@@ -38,15 +38,17 @@ export function Hero() {
                 rantFoster
               </span>
             </h1>
-            <RefreshableParagraph
-              original={HERO_SUMMARY}
-              section="hero summary"
-              className="mt-5 font-sans text-[15px] leading-6 text-zinc-900 dark:text-zinc-300 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl"
-            />
+            <div className="mt-4 md:mt-0">
+              <RefreshableParagraph
+                original={HERO_SUMMARY}
+                section="hero summary"
+                className="font-sans text-[15px] leading-6 text-zinc-900 dark:text-zinc-300 md:text-lg md:leading-relaxed lg:text-xl"
+              />
+            </div>
             <div className="mt-6 md:mt-8">
               <Link
                 href="/resume"
-                className="inline-flex items-center gap-2 border border-black/80 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-zinc-900 transition-colors hover:bg-black hover:text-white dark:border-white/70 dark:text-zinc-100 dark:hover:bg-white dark:hover:text-black"
+                className="flex w-full items-center justify-center gap-2 border border-black/80 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-zinc-900 transition-colors hover:bg-black hover:text-white dark:border-white/70 dark:text-zinc-100 dark:hover:bg-white dark:hover:text-black sm:inline-flex sm:w-auto sm:justify-start"
               >
                 View Resume
                 <span aria-hidden>→</span>

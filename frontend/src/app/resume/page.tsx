@@ -220,7 +220,7 @@ export default function ResumePage() {
           </div>
         </section>
 
-        <p className="mt-10 border-t border-black/10 pb-16 pt-6 font-mono text-xs text-zinc-400 dark:border-white/10 print:pb-0">
+        <p className="mt-10 border-t border-black/10 pb-16 pt-6 font-mono text-xs text-zinc-400 dark:border-white/10 print:mt-3 print:border-0 print:pt-2 print:pb-0 print:break-inside-avoid">
           References available upon request.
         </p>
       </div>
