@@ -111,7 +111,7 @@ const skills = [
 
 export default function ResumePage() {
   return (
-    <main className="min-h-dvh bg-white px-6 py-12 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 md:px-10 md:py-16 print:px-0 print:py-0">
+    <main className="min-h-dvh bg-white px-4 pt-20 pb-12 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 sm:px-6 md:px-10 md:pt-20 md:pb-16 print:px-0 print:py-0">
       <div className="mx-auto max-w-3xl print:max-w-none">
 
         {/* Nav row — hidden on print */}
@@ -162,11 +162,11 @@ export default function ResumePage() {
             {experience.map((job) => (
               <div key={job.company}>
                 <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
-                  <div>
+                  <div className="min-w-0">
                     <span className="font-display text-lg font-semibold text-zinc-950 dark:text-white print:text-base">{job.company}</span>
                     <span className="ml-2 text-base text-zinc-600 dark:text-zinc-400 print:text-sm">— {job.title}</span>
                   </div>
-                  <span className="font-mono text-xs text-zinc-400 sm:text-right">{job.location} · {job.period}</span>
+                  <span className="font-mono text-xs text-zinc-400 sm:shrink-0 sm:text-right">{job.location} · {job.period}</span>
                 </div>
                 <ul className="mt-3 space-y-2 pl-4 print:mt-1.5 print:space-y-1">
                   {job.bullets.map((b, i) => (
@@ -187,8 +187,8 @@ export default function ResumePage() {
           </h2>
           <dl className="mt-4 space-y-2 print:mt-2 print:space-y-1">
             {skills.map((s) => (
-              <div key={s.area} className="flex flex-row items-baseline gap-2">
-                <dt className="w-44 shrink-0 font-mono text-xs font-semibold text-zinc-500 dark:text-zinc-400">{s.area}</dt>
+              <div key={s.area} className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-2">
+                <dt className="sm:w-44 sm:shrink-0 font-mono text-xs font-semibold text-zinc-500 dark:text-zinc-400">{s.area}</dt>
                 <dd className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 print:text-xs print:leading-snug">{s.detail}</dd>
               </div>
             ))}
