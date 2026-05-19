@@ -2,9 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
-
-const HERO_SUMMARY =
-  "Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and own the stack from user experience to observable infrastructure. Trained as an Architect, I bring a professional design eye to every product I touch, and manage complexity with clear communication and containerized orchestration.";
+import { HERO_SUMMARY } from "@/data/site";
 
 export function Hero() {
   return (
