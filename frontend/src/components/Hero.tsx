@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
+
+const HERO_SUMMARY =
+  "Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and own the stack from user experience to observable infrastructure. Trained as an Architect, I bring a professional design eye to every product I touch, and manage complexity with clear communication and containerized orchestration.";
+
 export function Hero() {
   return (
     <section
@@ -33,9 +38,11 @@ export function Hero() {
                 rantFoster
               </span>
             </h1>
-            <p className="mt-5 font-sans text-[15px] leading-6 text-zinc-900 dark:text-zinc-300 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl">
-              Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and own the stack from user experience to observable infrastructure. Trained as an Architect, I bring a professional design eye to every product I touch, and manage complexity with clear communication and containerized orchestration.
-            </p>
+            <RefreshableParagraph
+              original={HERO_SUMMARY}
+              section="hero summary"
+              className="mt-5 font-sans text-[15px] leading-6 text-zinc-900 dark:text-zinc-300 md:mt-8 md:text-lg md:leading-relaxed lg:text-xl"
+            />
             <div className="mt-6 md:mt-8">
               <Link
                 href="/resume"
