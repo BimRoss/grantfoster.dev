@@ -12,6 +12,9 @@ export const HERO_SUMMARY =
 
 export const siteDescription = HERO_SUMMARY;
 
+export const LINK_PREVIEW_DESCRIPTION =
+  "Staff product engineer in applied AI and agentic infrastructure. 12+ years shipping 0-to-1 products across startups. TypeScript, React, Go, Kubernetes.";
+
 const sameAs = socials.flatMap((s) =>
   "href" in s && typeof s.href === "string" && /^https?:\/\//.test(s.href) ? [s.href] : [],
 );

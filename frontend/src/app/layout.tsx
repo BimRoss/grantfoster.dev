@@ -7,8 +7,8 @@ import { SiteNav } from "@/components/SiteNav";
 import { ToastProvider } from "@/components/ToastProvider";
 import {
   buildRootJsonLd,
+  LINK_PREVIEW_DESCRIPTION,
   OG_IMAGE_PATH,
-  siteDescription,
   SITE_NAME,
   SITE_TITLE,
   SITE_URL,
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     default: SITE_TITLE,
     template: "%s · Grant Foster",
   },
-  description: siteDescription,
+  description: LINK_PREVIEW_DESCRIPTION,
   keywords: [
     "Grant Foster",
     "Bittensor",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: SITE_TITLE,
-    description: siteDescription,
+    description: LINK_PREVIEW_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_TITLE,
-    description: siteDescription,
+    description: LINK_PREVIEW_DESCRIPTION,
     images: [OG_IMAGE_PATH],
     creator: "@geeeeeeemoney",
   },
