@@ -852,7 +852,13 @@ body::after {
   html.dark li,
   html.dark dt,
   html.dark dd,
-  html.dark a {
+  html.dark a,
+  html.dark table,
+  html.dark thead,
+  html.dark tbody,
+  html.dark tr,
+  html.dark th,
+  html.dark td {
     background-color: transparent !important;
     color: #111 !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
