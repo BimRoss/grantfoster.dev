@@ -130,6 +130,22 @@ export function buildRootJsonLd() {
           url: "https://bimross.com",
           description: BIMROSS_DESCRIPTION,
         },
+        subjectOf: { "@id": `${SITE_URL}/#ross` },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${SITE_URL}/#ross`,
+        name: "Ross",
+        alternateName: "Ross — Head of Automation",
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Cross-platform",
+        description:
+          "Persistent Claude Code agent operated by Grant Foster — ships day-to-day engineering work across BimRoss properties.",
+        url: "https://github.com/ross-bimross",
+        email: "ross@bimross.com",
+        sameAs: ["https://github.com/ross-bimross"],
+        creator: { "@id": `${SITE_URL}/#person` },
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       },
       {
         "@type": "WebPage",
