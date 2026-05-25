@@ -52,6 +52,32 @@ export function Hero() {
                 <span aria-hidden>→</span>
               </Link>
             </div>
+            <p
+              className="mt-5 flex flex-wrap items-center gap-x-2 gap-y-1 border-l-2 border-black/15 pl-3 font-mono text-[11px] leading-relaxed text-zinc-600 dark:border-white/20 dark:text-zinc-400 sm:text-xs"
+              title="Ross is a persistent Claude Code agent who ships day-to-day work alongside Grant."
+            >
+              <span className="uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-500">
+                Operated with
+              </span>
+              <span className="text-zinc-800 dark:text-zinc-200">Grant Foster</span>
+              <span aria-hidden className="text-zinc-400 dark:text-zinc-600">·</span>
+              <span className="text-zinc-800 dark:text-zinc-200">Ross</span>
+              <span className="text-zinc-500 dark:text-zinc-500">(agent)</span>
+              <a
+                href="https://github.com/ross-bimross"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 hover:decoration-zinc-600 dark:decoration-zinc-700 dark:hover:text-white dark:hover:decoration-zinc-300"
+              >
+                github.com/ross-bimross
+              </a>
+              <a
+                href="mailto:ross@bimross.com"
+                className="underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 hover:decoration-zinc-600 dark:decoration-zinc-700 dark:hover:text-white dark:hover:decoration-zinc-300"
+              >
+                ross@bimross.com
+              </a>
+            </p>
           </div>
         </div>
       </div>

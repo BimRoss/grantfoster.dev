@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 
 import { ExperienceEntry } from "@/components/resume/ExperienceEntry";
 import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
-import { EmailIcon, GitHubIcon, LinkedInIcon, PhoneIcon } from "@/data/socialIcons";
+import { IdentityChip } from "@/components/IdentityChip";
+import { principals } from "@/data/principals";
 
 export const metadata: Metadata = {
   title: "Resume — Grant Foster",
@@ -127,22 +128,9 @@ export default function ResumePage() {
           <p className="mt-2 font-mono text-sm text-zinc-500 dark:text-zinc-400 print:mt-1 print:text-xs">
             Staff Product Engineer — TypeScript · Python · Go · React · Docker · Kubernetes
           </p>
-          <div className="mt-4 flex flex-wrap gap-2 print:gap-x-5 print:gap-y-0.5">
-            {[
-              { href: "https://linkedin.com/in/grantdfoster", Icon: LinkedInIcon, label: "linkedin.com/in/grantdfoster", external: true },
-              { href: "https://github.com/geeeeemoney", Icon: GitHubIcon, label: "github.com/geeeeemoney", external: true },
-              { href: "mailto:grantdfoster@gmail.com", Icon: EmailIcon, label: "grantdfoster@gmail.com", external: false },
-              { href: "tel:+13144025801", Icon: PhoneIcon, label: "(314) 402-5801", external: false },
-            ].map(({ href, Icon, label, external }) => (
-              <a
-                key={href}
-                href={href}
-                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="inline-flex items-center gap-1.5 rounded-full border border-black/15 px-3 py-1.5 font-mono text-xs text-zinc-600 transition-colors hover:border-black/30 hover:text-zinc-950 dark:border-white/15 dark:text-zinc-400 dark:hover:border-white/30 dark:hover:text-white print:rounded-none print:border-0 print:p-0 print:text-zinc-600"
-              >
-                <Icon className="h-3.5 w-3.5 shrink-0 print:hidden" />
-                {label}
-              </a>
+          <div className="mt-5 grid gap-5 print:mt-3 print:grid-cols-2 print:gap-4 sm:grid-cols-2">
+            {principals.map((p) => (
+              <IdentityChip key={p.id} principal={p} />
             ))}
           </div>
         </header>
