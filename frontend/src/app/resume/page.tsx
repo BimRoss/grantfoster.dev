@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { ExperienceEntry } from "@/components/resume/ExperienceEntry";
 import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
-import { ross } from "@/data/principals";
+import { principals } from "@/data/principals";
 
 export const metadata: Metadata = {
   title: "Resume — Grant Foster",
@@ -128,7 +128,7 @@ export default function ResumePage() {
             Staff Product Engineer — TypeScript · Python · Go · React · Docker · Kubernetes
           </p>
           <div className="mt-4 flex flex-wrap gap-2 print:mt-2 print:gap-x-5 print:gap-y-0.5">
-            {ross.handles.map(({ href, Icon, label, external }) => (
+            {principals.flatMap((p) => p.handles).map(({ href, Icon, label, external }) => (
               <a
                 key={href}
                 href={href}
