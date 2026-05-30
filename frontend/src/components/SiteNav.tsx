@@ -41,7 +41,7 @@ export function SiteNav() {
           <LinkedInIcon className={svgClass} />
         </a>
         <a
-          href="https://github.com/geeeeemoney"
+          href="https://github.com/grantfosterdev"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"

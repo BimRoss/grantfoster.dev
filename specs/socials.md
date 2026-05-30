@@ -1,6 +1,6 @@
 email - grantdfoster@gmail.com
 website - grantfoster.dev
-github - https://github.com/geeeeemoney
+github - https://github.com/grantfosterdev
 twitter - https://twitter.com/geeeeeeemoney
 telegram - https://t.me/geeeemoney
 discord - https://discordapp.com/users/449222160687300608
