@@ -35,7 +35,7 @@ Staff-level engineer building products people actually use — from the screen t
 - https://bimross.com — BimRoss LLC (company site)
 
 ## Related Links
-- https://github.com/geeeeemoney
+- https://github.com/grantfosterdev
 - https://linkedin.com/in/grantdfoster
 
 ## Usage Notes for Agents

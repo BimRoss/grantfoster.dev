@@ -24,7 +24,7 @@ export const principals: Principal[] = [
     initials: "GF",
     handles: [
       { href: "https://linkedin.com/in/grantdfoster", label: "linkedin.com/in/grantdfoster", Icon: LinkedInIcon, external: true },
-      { href: "https://github.com/geeeeemoney", label: "github.com/geeeeemoney", Icon: GitHubIcon, external: true },
+      { href: "https://github.com/grantfosterdev", label: "github.com/grantfosterdev", Icon: GitHubIcon, external: true },
       { href: "mailto:grantdfoster@gmail.com", label: "grantdfoster@gmail.com", Icon: EmailIcon, external: false },
       { href: "tel:+13144025801", label: "(314) 402-5801", Icon: PhoneIcon, external: false },
     ],
