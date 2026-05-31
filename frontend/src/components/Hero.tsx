@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import NetworkBackdrop from "@/components/NetworkBackdrop";
 import { RefreshableParagraph } from "@/components/resume/RefreshableParagraph";
 import { HERO_SUMMARY } from "@/data/site";
 import { EmailIcon, GitHubIcon } from "@/data/socialIcons";
@@ -8,10 +9,13 @@ import { EmailIcon, GitHubIcon } from "@/data/socialIcons";
 export function Hero() {
   return (
     <section
-      className="relative w-full shrink-0 overflow-x-hidden bg-white px-5 pt-16 pb-6 dark:bg-zinc-950 md:px-10 md:pt-16 md:pb-8"
+      className="relative w-full shrink-0 overflow-x-hidden bg-transparent px-5 pt-16 pb-6 md:px-10 md:pt-16 md:pb-8"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="fixed inset-0 z-0">
+        <NetworkBackdrop />
+      </div>
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         <div className="hero-reveal flex flex-col gap-5">
           <div className="min-w-0 max-w-2xl text-left md:flex md:shrink-0 md:flex-col md:justify-center lg:max-w-3xl">
             <p className="border-l-2 border-black/40 pl-4 font-mono text-[10px] font-medium leading-relaxed tracking-[0.2em] text-zinc-800 dark:border-white/30 dark:text-zinc-400 sm:text-xs sm:tracking-[0.18em]">
