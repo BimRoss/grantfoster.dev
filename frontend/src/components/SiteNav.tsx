@@ -18,7 +18,7 @@ export function SiteNav() {
   return (
     <nav
       aria-label="Site navigation"
-      className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-white px-4 py-1.5 dark:bg-zinc-950 md:px-6 print:hidden"
+      className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-zinc-100 px-4 py-1.5 dark:bg-zinc-950 md:px-6 print:hidden"
     >
       <div>
         {pathname === "/resume" && (
