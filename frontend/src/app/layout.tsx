@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE_PATH,
         width: 1200,
         height: 630,
-        alt: "Grant Foster - AI staff engineer, Bittensor miner, and operator",
+        alt: "Grant Foster - AI principal engineer, Bittensor miner, and operator",
       },
     ],
   },

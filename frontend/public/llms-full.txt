@@ -1,7 +1,7 @@
 # Grant Foster — Full Context
 
 ## Profile
-Grant Foster is a Staff Product Engineer with 12+ years shipping 0-to-1 products at startups and enterprises. He owns the full stack — from product design and consumer UI to observable distributed infrastructure. Trained as an Architect (B.Arch, Syracuse University, 2013), he brings a professional design eye to every product. Recent focus: applied AI, agentic backends, and reliable distributed systems.
+Grant Foster is a Principal Product Engineer with 12+ years shipping 0-to-1 products at startups and enterprises. He owns the full stack — from product design and consumer UI to observable distributed infrastructure. Trained as an Architect (B.Arch, Syracuse University, 2013), he brings a professional design eye to every product. Recent focus: applied AI, agentic backends, and reliable distributed systems.
 
 - Email: grantdfoster@gmail.com
 - GitHub: https://github.com/grantfosterdev
