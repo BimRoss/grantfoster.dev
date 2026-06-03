@@ -25,7 +25,7 @@ const competencies = [
 const experience = [
   {
     company: "MakeACompany",
-    title: "Founding Full Stack Engineer",
+    title: "Founder",
     location: "Los Angeles, CA",
     period: "February 2026 – Present",
     bullets: [
