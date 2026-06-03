@@ -20,7 +20,7 @@ export const principals: Principal[] = [
   {
     id: "grant",
     name: "Grant Foster",
-    role: "Staff Product Engineer",
+    role: "Principal Product Engineer",
     initials: "GF",
     handles: [
       { href: "https://linkedin.com/in/grantdfoster", label: "linkedin.com/in/grantdfoster", Icon: LinkedInIcon, external: true },

@@ -13,13 +13,13 @@
 
 ## Identity
 - Name: Grant Foster
-- Role: Staff Product Engineer / AI Staff Engineer
+- Role: Principal Product Engineer / AI Principal Engineer
 - Domain: grantfoster.dev
 - Company: BimRoss LLC (https://bimross.com)
 - Email: grantdfoster@gmail.com
 
 ## Summary
-Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. Over a decade of experience shipping 0-to-1 across startups and enterprises, owning the stack from product design to observable infrastructure. Recent focus: applied AI and reliable agentic systems at scale.
+Principal engineer building products people actually use — from the screen they touch to the services that keep it running. Over a decade of experience shipping 0-to-1 across startups and enterprises, owning the stack from product design to observable infrastructure. Recent focus: applied AI and reliable agentic systems at scale.
 
 ## Current Work (BimRoss, February 2026 – Present)
 - Shipped a Slack-native product for MakeACompany.ai (https://makeacompany.ai)

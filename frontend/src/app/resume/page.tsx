@@ -7,7 +7,7 @@ import { principals } from "@/data/principals";
 export const metadata: Metadata = {
   title: "Resume — Grant Foster",
   description:
-    "Staff Product Engineer with 12+ years shipping 0-to-1 products at startups. TypeScript, React, Go, Kubernetes.",
+    "Principal Product Engineer with 12+ years shipping 0-to-1 products at startups. TypeScript, React, Go, Kubernetes.",
   alternates: { canonical: "/resume" },
 };
 
@@ -125,7 +125,7 @@ export default function ResumePage() {
             Grant Foster
           </h1>
           <p className="mt-2 font-mono text-sm text-zinc-500 dark:text-zinc-400 print:mt-1 print:text-xs">
-            Staff Product Engineer — TypeScript · Python · Go · React · Docker · Kubernetes
+            Principal Product Engineer — TypeScript · Python · Go · React · Docker · Kubernetes
           </p>
           <div className="mt-4 flex flex-wrap gap-2 print:mt-2 print:gap-x-5 print:gap-y-0.5">
             {principals.flatMap((p) => p.handles).map(({ href, Icon, label, external }) => (
@@ -145,7 +145,7 @@ export default function ResumePage() {
         {/* Summary */}
         <section className="mt-4 print:mt-2">
           <RefreshableParagraph
-            original="Staff-level engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and owning the stack from product design to observable infrastructure. I've spent years integrating software with the real world: generating building geometry, integrating live sensor feeds, and operating in markets that punish latency. My recent work focuses on applied AI and deploying reliable, agentic systems at scale. I close the gap between what engineers build and the customers who use it with real world validation."
+            original="Principal engineer building products people actually use — from the screen they touch to the services that keep it running. I have over a decade of experience shipping 0-to-1 across startups and enterprises, and owning the stack from product design to observable infrastructure. I've spent years integrating software with the real world: generating building geometry, integrating live sensor feeds, and operating in markets that punish latency. My recent work focuses on applied AI and deploying reliable, agentic systems at scale. I close the gap between what engineers build and the customers who use it with real world validation."
             section="professional summary"
             className="text-base leading-relaxed text-zinc-700 dark:text-zinc-300 md:text-lg print:text-sm print:leading-snug"
           />

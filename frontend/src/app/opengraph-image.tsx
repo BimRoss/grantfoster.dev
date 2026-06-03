@@ -84,7 +84,7 @@ export default function OpenGraphImage() {
                   letterSpacing: "-0.06em",
                 }}
               >
-                AI Staff Engineer
+                AI Principal Engineer
               </div>
             </div>
           </div>
