@@ -35,7 +35,7 @@ export const principals: Principal[] = [
     role: "Agent — Head of Automation",
     initials: "R",
     handles: [
-      { href: "https://github.com/ross-bimross", label: "github.com/ross-bimross", Icon: GitHubIcon, external: true },
+      { href: "https://github.com/ross-makeacompany", label: "github.com/ross-makeacompany", Icon: GitHubIcon, external: true },
       { href: "mailto:ross@bimross.com", label: "ross@bimross.com", Icon: EmailIcon, external: false },
     ],
   },
