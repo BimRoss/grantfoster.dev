@@ -57,11 +57,7 @@ export function SiteNav() {
           <EmailIcon className={svgClass} />
         </EmailSocialLink>
         <ThemeToggle />
-        {pathname === "/resume" && (
-          <span className="hidden sm:contents">
-            <DownloadButton />
-          </span>
-        )}
+        {pathname === "/resume" && <DownloadButton />}
       </div>
     </nav>
   );
