@@ -65,13 +65,13 @@ export function Hero() {
                 Built by <span className="font-semibold text-zinc-900 dark:text-zinc-100">Ross</span>, Grant&rsquo;s favorite agent
               </span>
               <a
-                href="https://github.com/ross-bimross"
+                href="https://github.com/ross-makeacompany"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 underline decoration-zinc-300 underline-offset-4 transition-colors hover:text-zinc-950 hover:decoration-zinc-600 dark:decoration-zinc-700 dark:hover:text-white dark:hover:decoration-zinc-300"
               >
                 <GitHubIcon className="h-3.5 w-3.5 shrink-0" />
-                github.com/ross-bimross
+                github.com/ross-makeacompany
               </a>
               <a
                 href="mailto:ross@bimross.com"

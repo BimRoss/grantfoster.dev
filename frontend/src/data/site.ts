@@ -141,9 +141,9 @@ export function buildRootJsonLd() {
         operatingSystem: "Cross-platform",
         description:
           "Persistent Claude Code agent operated by Grant Foster — ships day-to-day engineering work across BimRoss properties.",
-        url: "https://github.com/ross-bimross",
+        url: "https://github.com/ross-makeacompany",
         email: "ross@bimross.com",
-        sameAs: ["https://github.com/ross-bimross"],
+        sameAs: ["https://github.com/ross-makeacompany"],
         creator: { "@id": `${SITE_URL}/#person` },
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
       },
