@@ -117,7 +117,15 @@ export default function RootLayout({
         <JsonLd data={rootJsonLd} />
         <ToastProvider>
           <SiteNav />
-          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-x-hidden overflow-y-auto">
+          {/*
+            md:overflow-hidden clamps the landing page (/) to one viewport on
+            desktop + iPad as Grant requested. Mobile (below md) keeps
+            overflow-y-auto so the Hero remains reachable on narrow screens.
+            Scroll-needing routes (/resume) reintroduce their own
+            md:overflow-y-auto on an inner container so the layout decision
+            never has to know which pages are scrollable.
+          */}
+          <div className="relative z-10 flex h-full min-h-0 flex-col overflow-x-hidden overflow-y-auto md:overflow-y-hidden">
             {children}
           </div>
         </ToastProvider>
