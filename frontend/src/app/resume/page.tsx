@@ -114,7 +114,11 @@ const skills = [
 
 export default function ResumePage() {
   return (
-    <main className="min-h-dvh bg-white px-4 pt-20 pb-12 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 sm:px-6 md:px-10 md:pt-20 md:pb-16 print:px-0 print:py-0">
+    // md:h-full + md:overflow-y-auto re-enables scrolling on desktop/iPad
+    // here, since the global layout switched to md:overflow-y-hidden so the
+    // landing page can be a single viewport. /resume is long-form content;
+    // scrolling stays the expected behavior.
+    <main className="min-h-dvh bg-white px-4 pt-20 pb-12 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 sm:px-6 md:h-full md:overflow-y-auto md:px-10 md:pt-20 md:pb-16 print:px-0 print:py-0">
       <div className="mx-auto max-w-3xl print:max-w-none">
 
         {/* Nav row — hidden on print */}
