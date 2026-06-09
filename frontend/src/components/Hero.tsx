@@ -15,7 +15,7 @@ export function Hero() {
       <div className="fixed inset-0 z-0">
         <NetworkBackdrop />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-6xl">
+      <div className="pointer-events-none relative z-10 mx-auto w-full max-w-6xl select-none [&_a]:pointer-events-auto [&_a]:select-text [&_button]:pointer-events-auto [&_button]:select-text">
         <div className="hero-reveal flex flex-col gap-5">
           <div className="min-w-0 max-w-2xl text-left md:flex md:shrink-0 md:flex-col md:justify-center lg:max-w-3xl">
             <p className="border-l-2 border-black/40 pl-4 font-mono text-[10px] font-medium leading-relaxed tracking-[0.2em] text-zinc-800 dark:border-white/30 dark:text-zinc-400 sm:text-xs sm:tracking-[0.18em]">
